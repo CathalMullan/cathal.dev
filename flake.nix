@@ -28,12 +28,11 @@
 
           NEXT_TELEMETRY_DISABLED = "1";
 
-          buildInputs = with pkgs;
-            [
-              # Node
-              nodejs-18_x
-              nodePackages.pnpm
-            ];
+          buildInputs = with pkgs; [
+            # Node
+            nodejs-18_x
+            nodePackages.pnpm
+          ];
         };
       });
 }
