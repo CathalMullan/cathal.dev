@@ -26,11 +26,14 @@
         devShell = mkShell {
           name = "cathal-dev-shell";
 
-          buildInputs = with pkgs; [
-            # Node
-            nodejs-18_x
-            nodePackages.pnpm
-          ];
+          NEXT_TELEMETRY_DISABLED = "1";
+
+          buildInputs = with pkgs;
+            [
+              # Node
+              nodejs-18_x
+              nodePackages.pnpm
+            ];
         };
       });
 }
