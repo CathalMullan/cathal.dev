@@ -1,0 +1,26 @@
+# MacOS
+.DS_Store
+
+# IntelliJ
+.idea
+.iml
+.ipr
+
+# Node
+node_modules
+out
+build
+.pnp
+.pnp.js
+.next
+.vercel
+.pnpm-debug.log
+
+# Nix
+result
+
+# Dir Env
+.direnv
+
+# Temporary Files
+.tmp

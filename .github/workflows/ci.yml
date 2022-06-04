@@ -1,0 +1,47 @@
+---
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - master
+
+defaults:
+  run:
+    shell: nix develop --ignore-environment --command bash {0}
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Bootstrap CI
+        uses: ./.github/actions/ci-bootstrap
+        with:
+          cacheID: build
+
+      - name: Build package
+        run: pnpm run build
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Bootstrap CI
+        uses: ./.github/actions/ci-bootstrap
+        with:
+          cacheID: lint
+
+      - name: Run formatter
+        run: pnpm run fmt-ci
+
+      - name: Run linters
+        run: pnpm run lint
