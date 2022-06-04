@@ -25,6 +25,9 @@ jobs:
         with:
           cacheID: build
 
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Build package
         run: pnpm run build
 
@@ -39,6 +42,9 @@ jobs:
         uses: ./.github/actions/ci-bootstrap
         with:
           cacheID: lint
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Run formatter
         run: pnpm run fmt-ci
