@@ -1,0 +1,75 @@
+==================================================================
+https://keybase.io/cathal
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://cathal.dev
+  * I am cathal (https://keybase.io/cathal) on keybase.
+  * I have a public key with fingerprint 78F6 8A9E 8D38 4F89 5F7C  D747 94E9 AAC5 4DF4 E73A
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101cdc578a7ba0e56a53ddca63e1e41d11a3ec7110bbb6770ef4b7c549910c790540a",
+      "fingerprint": "78f68a9e8d384f895f7cd74794e9aac54df4e73a",
+      "host": "keybase.io",
+      "key_id": "94e9aac54df4e73a",
+      "kid": "010159ca4402028f39dd9b8c4852dfa7a4ef6acd5cebfa50827d4f14ad114ac009070a",
+      "uid": "5513741851521ff4355911aefe323b19",
+      "username": "cathal"
+    },
+    "service": {
+      "hostname": "cathal.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1654411248,
+  "expire_in": 157680000,
+  "prev": "31c69ee9e26dc6dcf18fca67427404641f327560cdd682db3f4db8516317b5d3",
+  "seqno": 18,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+kA0DAAgBGm3eV3GS2U0By+liAGKcT/p7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9r
+aWQiOiIwMTAxY2RjNTc4YTdiYTBlNTZhNTNkZGNhNjNlMWU0MWQxMWEzZWM3MTEw
+YmJiNjc3MGVmNGI3YzU0OTkxMGM3OTA1NDBhIiwiZmluZ2VycHJpbnQiOiI3OGY2
+OGE5ZThkMzg0Zjg5NWY3Y2Q3NDc5NGU5YWFjNTRkZjRlNzNhIiwiaG9zdCI6Imtl
+eWJhc2UuaW8iLCJrZXlfaWQiOiI5NGU5YWFjNTRkZjRlNzNhIiwia2lkIjoiMDEw
+MTU5Y2E0NDAyMDI4ZjM5ZGQ5YjhjNDg1MmRmYTdhNGVmNmFjZDVjZWJmYTUwODI3
+ZDRmMTRhZDExNGFjMDA5MDcwYSIsInVpZCI6IjU1MTM3NDE4NTE1MjFmZjQzNTU5
+MTFhZWZlMzIzYjE5IiwidXNlcm5hbWUiOiJjYXRoYWwifSwic2VydmljZSI6eyJo
+b3N0bmFtZSI6ImNhdGhhbC5kZXYiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBl
+Ijoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjdGltZSI6MTY1
+NDQxMTI0OCwiZXhwaXJlX2luIjoxNTc2ODAwMDAsInByZXYiOiIzMWM2OWVlOWUy
+NlVkYzZkY2YxOGZjYTY3NDI3NDA0NjQxZjMyNzU2MGNkZDY4MmRiM2Y0ZGI4NTE2
+MzE3YjVkMyIsInNlcW5vIjoxOCwidGFnIjoic2lnbmF0dXJlIn0KiQIzBAABCAAd
+FiEE7MzqdWRezHwvCJY5Gm3eV3GS2U0FAmKcT/oACgkQGm3eV3GS2U0r8g//WnVE
+aFUnO9dAK9zV4owX5hJspjbUu9tTgVtr5pwXz/MKUlaxoZrcYTPG20TYO+eAiEXr
+2TyfNziuTwrBz7mPCQHr702gU5pa+yZgS5NiKcrPomfVoFtfgLYLr7NPVij5sEzt
+nXxn6/0pnNKXE+V3riDnP0Uj4eHlNqa/is3d/ynYEKm8SqZsE/la+aSZSy7yzAHY
+FM6cJPbgrqeW+/gqJwf4bwi+QEiUNBDJ4GK/9cXPxNodU4qE8KUX6GpTEfTZYKYh
+3JUSTzE5bhUoLQWGaQRonnNpiFbhJYaEASDBTak4IvnzFRvGc/p2dQGtSgwkZJmu
+G1XASGRuGJniSJZ6ezrWDN5lHFCaIoI6eZNw+bQtVRr3KEu2Yy0EL/dTy/9L9rCh
+8K6Ix9LDs+RDqN5/w+DnkjEIH77UijrDCggq3T5vqLHynaboMRt/xCNhjYjG6Vpo
+3IzNHmXTSJh77kHBR5FMzIWW3S35k+65WDWYS8Y3BCjdz54W1MQ3qo3TSZNy7ZrI
+fOx+Anty6C6O40cOh2CY8q7++3vbqNH/JPLzg5dPvAonsPlBWpp7Ripr0QJ3Dwzd
+kuarn4A+0b639+DJMSMdCFnia6Jzgiwwx1RsRpVaQQIOf+KUXaXtMwpgd53OT3gl
+gFrMRT7lGCsa3Wtzg8VlJe89heDjltaksQX9aV8=
+=6iI6
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cathal
+
+==================================================================
