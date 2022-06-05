@@ -9,6 +9,7 @@ const Home: NextPage = () => {
         <title>🚧 Under Construction 🚧</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <LightningBoltIcon className="w-screen h-screen text-amber-400" />
     </div>
   )

@@ -16,11 +16,13 @@ build
 .vercel
 .pnpm-debug.log
 
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.backup
+
 # Nix
 result
 
 # Dir Env
 .direnv
-
-# Temporary Files
-.tmp
