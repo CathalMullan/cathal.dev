@@ -10,3 +10,13 @@ provider "aws" {
     }
   }
 }
+
+provider "namecheap" {
+  user_name   = "CathalMullan"
+  api_user    = "CathalMullan"
+  use_sandbox = false
+}
+
+provider "cloudflare" {
+  email = "contact@cathal.dev"
+}

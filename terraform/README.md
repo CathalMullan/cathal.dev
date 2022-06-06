@@ -1,5 +1,10 @@
 # Terraform
 
-## TODO
+```
+export NAMECHEAP_API_KEY=""
+export CLOUDFLARE_API_KEY=""
 
-- Setup CSP (https://observatory.mozilla.org/analyze/www.cathal.dev)
+cd environments/production
+terraform init -upgrade
+terraform apply
+```

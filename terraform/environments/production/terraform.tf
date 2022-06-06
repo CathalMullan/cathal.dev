@@ -15,6 +15,16 @@ terraform {
       version = "~> 4.0"
     }
 
+    namecheap = {
+      source  = "namecheap/namecheap"
+      version = "~> 2.0"
+    }
+
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 3.0"
+    }
+
     http = {
       source  = "hashicorp/http"
       version = "~> 2.0"

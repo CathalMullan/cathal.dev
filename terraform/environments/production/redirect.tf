@@ -15,7 +15,7 @@ resource "aws_s3_bucket_website_configuration" "cathal_dev" {
   }
 }
 
-data "aws_iam_policy_document" "cathal_dev_public" {
+data "aws_iam_policy_document" "cathal_dev_cloudflare_ip_access" {
   statement {
     actions   = ["s3:GetObject"]
     resources = ["arn:aws:s3:::cathal.dev/*"]
@@ -38,5 +38,5 @@ data "aws_iam_policy_document" "cathal_dev_public" {
 
 resource "aws_s3_bucket_policy" "cathal_dev" {
   bucket = aws_s3_bucket.cathal_dev.id
-  policy = data.aws_iam_policy_document.cathal_dev_public.json
+  policy = data.aws_iam_policy_document.cathal_dev_cloudflare_ip_access.json
 }
