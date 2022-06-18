@@ -16,27 +16,37 @@
     "@heroicons/react": "1.0.6",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-markdown": "8.0.3",
+    "react-syntax-highlighter": "15.5.0",
+    "remark-gfm": "3.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "0.5.2",
     "@types/node": "17.0.40",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
+    "@types/react-syntax-highlighter": "15.5.2",
     "@typescript-eslint/eslint-plugin": "5.27.0",
     "@typescript-eslint/parser": "5.27.0",
     "autoprefixer": "10.4.7",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.5.0",
+    "gray-matter": "4.0.3",
     "postcss": "8.4.14",
     "prettier": "2.6.2",
+    "prettier-plugin-tailwindcss": "0.1.11",
     "tailwindcss": "3.0.24",
     "typescript": "4.7.3"
   },
   "prettier": {
     "singleQuote": true,
     "semi": false,
-    "trailingComma": "es5"
+    "trailingComma": "es5",
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   },
   "eslintConfig": {
     "root": true,
