@@ -4,8 +4,9 @@ import matter from 'gray-matter'
 
 export type Article = {
   id: string
-  data: string
+  content: string
   title: string
+  date: string
 }
 
 const articlesDirectory = path.join(process.cwd(), 'articles')
@@ -22,8 +23,9 @@ export function getArticles(): Array<Article> {
 
     return {
       id: id,
-      data: content,
+      content: content,
       title: data.title,
+      date: data.date,
     }
   })
 
@@ -48,7 +50,8 @@ export function getArticle(id: string): Article {
 
   return {
     id: id,
-    data: content,
+    content: content,
     title: data.title,
+    date: data.date,
   }
 }

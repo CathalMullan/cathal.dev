@@ -39,8 +39,7 @@ resource "cloudflare_record" "cathal_dev_dkim_1" {
   name    = "fm1._domainkey"
   value   = "fm1.cathal.dev.dkim.fmhosted.com"
   type    = "CNAME"
-  ttl     = 1
-  proxied = true
+  ttl     = 3600
 }
 
 resource "cloudflare_record" "cathal_dev_dkim_2" {
@@ -49,8 +48,7 @@ resource "cloudflare_record" "cathal_dev_dkim_2" {
   name    = "fm2._domainkey"
   value   = "fm2.cathal.dev.dkim.fmhosted.com"
   type    = "CNAME"
-  ttl     = 1
-  proxied = true
+  ttl     = 3600
 }
 
 resource "cloudflare_record" "cathal_dev_dkim_3" {
@@ -59,8 +57,7 @@ resource "cloudflare_record" "cathal_dev_dkim_3" {
   name    = "fm3._domainkey"
   value   = "fm3.cathal.dev.dkim.fmhosted.com"
   type    = "CNAME"
-  ttl     = 1
-  proxied = true
+  ttl     = 3600
 }
 
 # DMARC

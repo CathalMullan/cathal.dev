@@ -11,7 +11,7 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 export default function Markdown({ content }: { content: string }) {
   return (
     <ReactMarkdown
-      className="mx-auto prose prose-pre:p-0"
+      className="prose mx-auto prose-pre:p-0"
       remarkPlugins={[remarkGfm]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{

@@ -30,18 +30,13 @@ My website.
 
 ### Footer
 
-- GitHub Link
-- Twitter Link
-- LinkedIn Link
-- Email (mailto:...)
-
 - Copyright/License
 - Link to security.txt, robots.txt, keybase.txt, sitemap
 - Link to GitHub commit
 
 ## Features
 
-- Markdown Rendering
+- Favicon
 - Site Map
 - References
 - Search
