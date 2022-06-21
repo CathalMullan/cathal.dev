@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "4.5.9",
-    "@heroicons/react": "1.0.6",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
@@ -28,7 +27,7 @@
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "@types/react-syntax-highlighter": "15.5.2",
-    "@typescript-eslint/eslint-plugin": "5.27.0",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.27.0",
     "autoprefixer": "10.4.7",
     "eslint": "8.17.0",
