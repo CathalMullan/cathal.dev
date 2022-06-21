@@ -39,6 +39,9 @@
             # Terraform
             terraform
             tflint
+
+            # Utility
+            git
           ];
         };
       });
