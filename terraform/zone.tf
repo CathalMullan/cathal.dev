@@ -13,10 +13,12 @@ resource "cloudflare_zone_settings_override" "cathal_dev" {
     automatic_https_rewrites = "on"
     brotli                   = "on"
     early_hints              = "on"
-    email_obfuscation        = "on"
     http3                    = "on"
     ipv6                     = "on"
-    rocket_loader            = "on"
+
+    // Disabling for now, as this seems to impact CSP adherence
+    email_obfuscation        = "off"
+    rocket_loader            = "off"
 
     cache_level     = "aggressive"
     min_tls_version = "1.3"
