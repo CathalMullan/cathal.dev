@@ -24,16 +24,18 @@ aws s3 sync \
   --metadata-directive REPLACE \
   ./out/ \
   s3://www.cathal.dev/ \
-  --exclude "*.jpg" \
   --exclude "*.png" \
-  --exclude "*.jpeg" \
-  --exclude "_next/*" \
-  --exclude "*.svg"
+  --exclude "*.svg" \
+  --exclude "*.ico" \
+  --include "*.txt" \
+  --exclude "*.webmanifest" \
+  --exclude "_next/*"
 
 # push(sync) all other kind of files such as images or SVGs
 aws s3 sync ./out/ s3://www.cathal.dev/ \
   --exclude "*.*" \
-  --include "*.jpg" \
   --include "*.png" \
-  --include "*.jpeg" \
-  --include "*.svg"
+  --include "*.svg" \
+  --include "*.ico" \
+  --include "*.txt" \
+  --include "*.webmanifest"
