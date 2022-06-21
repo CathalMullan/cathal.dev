@@ -1,4 +1,4 @@
-import { MailIcon } from '@heroicons/react/solid'
+import MailIcon from 'public/svg/MailIcon.svg'
 
 export default function EmailLink() {
   return (

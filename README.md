@@ -19,33 +19,33 @@ My website.
 
 - Home/Landing
 - About Me
-- Today I Learned
-  - (...)
+- CV/Resume
 - Blogs
   - How My Site Works
   - (...)
 - Projects
+  - ...
 
 ## Components
 
 ### Footer
 
-- Copyright/License
-- Link to security.txt, robots.txt, keybase.txt, sitemap
 - Link to GitHub commit
 
-## Features
+## TODO
 
-- Favicon
+- Meaningful Favicon
 - Site Map
 - References
+- Mermaid Diagrams
 - Search
 - Tags
 - RSS
 - Notifications
 - Light/Dark Mode
-- Syntax Highlighting
 - References
 - Share on (Reddit/HackerNews/Twiter)
 - Related Posts
 - SEO
+
+- GA -> AWS pipeline

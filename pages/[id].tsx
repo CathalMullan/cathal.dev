@@ -4,16 +4,21 @@ import { getArticleIDs, getArticle, Article } from 'lib/articles'
 import Markdown from 'components/Markdown'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import Head from 'next/head'
 
 export default function Blog({ article }: { article: Article }) {
   return (
-    <div className="antialiased">
-      <Header />
-      <br />
-      <Markdown content={article.content} />
-      <br />
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>cathal.dev - {article.title}</title>
+      </Head>
+
+      <main>
+        <Header />
+        <Markdown content={article.content} />
+        <Footer />
+      </main>
+    </>
   )
 }
 
