@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "sync": "aws s3 sync out s3://www.cathal.dev/",
+    "sync": "./scripts/sync.sh",
     "start": "next start",
     "lint": "next lint",
     "fmt": "pnpm prettier --write .",

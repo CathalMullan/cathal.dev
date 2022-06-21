@@ -10,15 +10,14 @@ export type Article = {
 }
 
 const articlesDirectory = path.join(process.cwd(), 'articles')
-const blogDirectory = path.join(articlesDirectory, 'blog')
 
 export function getArticles(): Array<Article> {
-  const articleNames = fs.readdirSync(blogDirectory)
+  const articleNames = fs.readdirSync(articlesDirectory)
 
   const articles = articleNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, '')
 
-    const fullPath = path.join(blogDirectory, fileName)
+    const fullPath = path.join(articlesDirectory, fileName)
     const article = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(article)
 
@@ -34,7 +33,7 @@ export function getArticles(): Array<Article> {
 }
 
 export function getArticleIDs() {
-  const articleNames = fs.readdirSync(blogDirectory)
+  const articleNames = fs.readdirSync(articlesDirectory)
   return articleNames.map((fileName) => {
     return {
       params: {
@@ -45,7 +44,7 @@ export function getArticleIDs() {
 }
 
 export function getArticle(id: string): Article {
-  const fullPath = path.join(blogDirectory, `${id}.md`)
+  const fullPath = path.join(articlesDirectory, `${id}.md`)
   const article = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(article)
 

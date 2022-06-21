@@ -10,11 +10,11 @@ resource "aws_s3_bucket_website_configuration" "www_cathal_dev" {
   bucket = aws_s3_bucket.www_cathal_dev.bucket
 
   index_document {
-    suffix = "index.html"
+    suffix = "index"
   }
 
   error_document {
-    key = "404.html"
+    key = "404"
   }
 }
 

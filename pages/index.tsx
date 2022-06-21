@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Article, getArticles, getWhoAmI } from 'lib/articles'
+import { Article, getArticles, getArticle } from 'lib/articles'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Markdown from 'components/Markdown'
@@ -43,7 +43,7 @@ export default function Index({ articles, whoAmI }: { articles: Array<Article>; 
 
 export async function getStaticProps() {
   const articles = getArticles()
-  const whoAmI = getWhoAmI()
+  const whoAmI = getArticle('whoami')
 
   return {
     props: {

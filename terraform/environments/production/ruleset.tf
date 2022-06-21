@@ -12,11 +12,11 @@ resource "cloudflare_ruleset" "response_security_headers" {
     expression = "true"
 
     action_parameters {
-      headers {
-        operation = "set"
-        name      = "Content-Security-Policy"
-        value     = "default-src 'self'; script-src 'self'; child-src cathal.dev; style-src 'self' cathal.dev; font-src 'self';"
-      }
+      # headers {
+      #   operation = "set"
+      #   name      = "Content-Security-Policy"
+      #   value     = "default-src 'self'; script-src 'self'; child-src cathal.dev; style-src 'self' cathal.dev; font-src 'self';"
+      # }
 
       headers {
         operation = "set"
