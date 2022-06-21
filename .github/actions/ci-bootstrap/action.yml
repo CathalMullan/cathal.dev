@@ -36,6 +36,7 @@ runs:
         path: |
           ~/.pnpm-store
           ./node_modules
+          ./.next/cache
         restore-keys: |
           cathal-dev-${{ runner.os }}-${{ inputs.cacheID }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           cathal-dev-${{ runner.os }}-${{ inputs.cacheID }}-
