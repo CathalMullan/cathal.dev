@@ -1,4 +1,7 @@
 .direnv
+.github
 .next
 node_modules
 out
+terraform
+pnpm-lock.yaml
