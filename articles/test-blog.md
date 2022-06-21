@@ -7,7 +7,7 @@ date: '2022-07-01'
 
 This is a test Markdown document.
 
-## Here is header
+## Here is a header
 
 Look, some Rust code!
 

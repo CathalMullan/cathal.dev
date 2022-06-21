@@ -25,16 +25,11 @@ My website.
   - (...)
 - Projects
   - ...
-
-## Components
-
-### Footer
-
-- Link to GitHub commit
+- Knowledge Base
+  - ...
 
 ## TODO
 
-- Meaningful Favicon
 - Site Map
 - References
 - Mermaid Diagrams
@@ -47,5 +42,3 @@ My website.
 - Share on (Reddit/HackerNews/Twiter)
 - Related Posts
 - SEO
-
-- GA -> AWS pipeline
