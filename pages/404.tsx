@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   return (
     <>
       <Head>
-        <title>cathal.dev</title>
+        <title>cathal.dev - 404</title>
       </Head>
 
       <main>

@@ -1,10 +1,15 @@
 import Head from 'next/head'
-import { Article, getArticles, getArticle } from 'lib/articles'
+import { MarkdownFile, fetchMarkdownFiles, fetchMarkdownFile } from 'lib/markdown'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Markdown from 'components/Markdown'
 
-export default function Index({ articles, whoAmI }: { articles: Array<Article>; whoAmI: Article }) {
+interface IndexProps {
+  whoAmI: MarkdownFile
+  blogPosts: Array<MarkdownFile>
+}
+
+export default function Index({ whoAmI, blogPosts }: IndexProps) {
   return (
     <>
       <Head>
@@ -16,12 +21,12 @@ export default function Index({ articles, whoAmI }: { articles: Array<Article>; 
         <Markdown content={whoAmI.content} />
 
         <article className="prose mx-auto pt-10">
-          <h2>Articles</h2>
+          <h2>Blog Posts</h2>
 
           <ul>
-            {articles.map(({ id, title, date }: Article) => (
+            {blogPosts.map(({ id, title, date }: MarkdownFile) => (
               <li key={id}>
-                <a href={`/${id}`}>
+                <a href={`/blog/${id}`}>
                   {date}: {title}
                 </a>
               </li>
@@ -36,13 +41,13 @@ export default function Index({ articles, whoAmI }: { articles: Array<Article>; 
 }
 
 export async function getStaticProps() {
-  const articles = getArticles()
-  const whoAmI = getArticle('whoami')
+  const whoAmI = fetchMarkdownFile('.', 'whoami')
+  const blogPosts = fetchMarkdownFiles('blog')
 
   return {
     props: {
-      articles,
       whoAmI,
+      blogPosts,
     },
   }
 }

@@ -30,15 +30,15 @@ My website.
 
 ## TODO
 
+Ordered by priority.
+
 - Site Map
-- References
-- Mermaid Diagrams
-- Search
-- Tags
-- RSS
-- Notifications
 - Light/Dark Mode
-- References
-- Share on (Reddit/HackerNews/Twiter)
-- Related Posts
+- Tags
+- Search
+- Mermaid Diagrams
 - SEO
+- Share on (Reddit/HackerNews/Twiter)
+- Notifications
+- RSS
+- Related Posts

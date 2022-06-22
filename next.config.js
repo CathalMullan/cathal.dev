@@ -6,7 +6,6 @@ console.log(`GIT_HASH: ${GIT_HASH}`)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: './',
   reactStrictMode: true,
 
   env: {
