@@ -7,9 +7,10 @@ import Markdown from 'components/Markdown'
 interface IndexProps {
   whoAmI: MarkdownFile
   blogPosts: Array<MarkdownFile>
+  snippets: Array<MarkdownFile>
 }
 
-export default function Index({ whoAmI, blogPosts }: IndexProps) {
+export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
   return (
     <>
       <Head>
@@ -22,11 +23,25 @@ export default function Index({ whoAmI, blogPosts }: IndexProps) {
 
         <article className="prose mx-auto pt-10">
           <h2>Blog Posts</h2>
-
+          Content with a purpose:
           <ul>
             {blogPosts.map(({ id, title, date }: MarkdownFile) => (
               <li key={id}>
                 <a href={`/blog/${id}`}>
+                  {date}: {title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </article>
+
+        <article className="prose mx-auto pt-10">
+          <h2>Snippets</h2>
+          Random notes:
+          <ul>
+            {snippets.map(({ id, title, date }: MarkdownFile) => (
+              <li key={id}>
+                <a href={`/snippets/${id}`}>
                   {date}: {title}
                 </a>
               </li>
@@ -43,11 +58,13 @@ export default function Index({ whoAmI, blogPosts }: IndexProps) {
 export async function getStaticProps() {
   const whoAmI = fetchMarkdownFile('.', 'whoami')
   const blogPosts = fetchMarkdownFiles('blog')
+  const snippets = fetchMarkdownFiles('snippets')
 
   return {
     props: {
       whoAmI,
       blogPosts,
+      snippets,
     },
   }
 }
