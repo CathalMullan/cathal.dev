@@ -1,8 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const childProcess = require('child_process')
-
-const GIT_HASH = childProcess.execSync('git rev-parse HEAD').toString().trim()
-console.log(`GIT_HASH: ${GIT_HASH}`)
+const GIT_HASH = process.env.GITHUB_SHA || 'Unknown Git Hash'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
