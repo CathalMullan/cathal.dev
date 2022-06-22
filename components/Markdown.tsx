@@ -1,12 +1,22 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Prism } from 'react-syntax-highlighter'
+import { PrismLight } from 'react-syntax-highlighter'
 
 // Strange error when importing this theme, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
+// Register syntax highlighted languages
+// The default of shipping all languages results in a 2MB bundle, which I'd rather avoid
+import rust from 'react-syntax-highlighter/dist/cjs/languages/prism/rust'
+import python from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx'
+import nix from 'react-syntax-highlighter/dist/cjs/languages/prism/nix'
+
+PrismLight.registerLanguage('python', python)
+PrismLight.registerLanguage('rust', rust)
+PrismLight.registerLanguage('nix', nix)
 
 export default function Markdown({ content }: { content: string }) {
   return (
@@ -20,9 +30,9 @@ export default function Markdown({ content }: { content: string }) {
 
           if (!inline && match) {
             return (
-              <Prism style={coldarkDark} language={match[1]} showLineNumbers={true} PreTag="div" {...props}>
+              <PrismLight style={coldarkDark} language={match[1]} showLineNumbers={true} PreTag="div" {...props}>
                 {String(children).replace(/\n$/, '')}
-              </Prism>
+              </PrismLight>
             )
           }
 
