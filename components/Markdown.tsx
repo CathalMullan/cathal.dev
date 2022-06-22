@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { PrismLight } from 'react-syntax-highlighter'
+import { PrismAsyncLight } from 'react-syntax-highlighter'
 
 // Strange error when importing this theme, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -14,9 +14,9 @@ import rust from 'react-syntax-highlighter/dist/cjs/languages/prism/rust'
 import python from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx'
 import nix from 'react-syntax-highlighter/dist/cjs/languages/prism/nix'
 
-PrismLight.registerLanguage('python', python)
-PrismLight.registerLanguage('rust', rust)
-PrismLight.registerLanguage('nix', nix)
+PrismAsyncLight.registerLanguage('python', python)
+PrismAsyncLight.registerLanguage('rust', rust)
+PrismAsyncLight.registerLanguage('nix', nix)
 
 export default function Markdown({ content }: { content: string }) {
   return (
@@ -30,9 +30,9 @@ export default function Markdown({ content }: { content: string }) {
 
           if (!inline && match) {
             return (
-              <PrismLight style={coldarkDark} language={match[1]} showLineNumbers={true} PreTag="div" {...props}>
+              <PrismAsyncLight style={coldarkDark} language={match[1]} showLineNumbers={true} PreTag="div" {...props}>
                 {String(children).replace(/\n$/, '')}
-              </PrismLight>
+              </PrismAsyncLight>
             )
           }
 
