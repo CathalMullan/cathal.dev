@@ -1,7 +1,7 @@
-resource "cloudflare_ruleset" "response_security_headers" {
+resource "cloudflare_ruleset" "response_headers" {
   zone_id = cloudflare_zone.cathal_dev.id
 
-  name  = "response_security_headers"
+  name  = "response_headers"
   kind  = "zone"
   phase = "http_response_headers_transform"
 
@@ -12,6 +12,7 @@ resource "cloudflare_ruleset" "response_security_headers" {
     expression = "true"
 
     action_parameters {
+      // Security
       headers {
         operation = "set"
         name      = "X-Frame-Options"
@@ -28,6 +29,13 @@ resource "cloudflare_ruleset" "response_security_headers" {
         operation = "set"
         name      = "Permissions-Policy"
         value     = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+      }
+
+      // Performance
+      headers {
+        operation = "set"
+        name      = "Cache-Control"
+        value     = "public, max-age=31536000, immutable"
       }
     }
   }
