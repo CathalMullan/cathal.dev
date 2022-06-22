@@ -3,27 +3,21 @@ set -euxo pipefail
 
 #
 # S3 can't handle requests to `/about` being routed to `/about.html`.
-# So we need to manually rename HTML files.
-# https://medium.com/@valdozzz/next-js-ssg-clean-deploy-on-aws-9e5ca91a4703
+# So we need to manually rename all HTML files first.
 #
 
-# first of all we delete everything from the bucket
+# Truncate bucket
 aws s3 rm s3://www.cathal.dev --recursive
 
-# push(sync) the _next folder to S3
-aws s3 sync ./out/_next/ s3://www.cathal.dev/_next/
-
-# find all .html files and remove their extension
+# Rename HTML files to strip extensiom
 for file in $(find ./out -name "*.html"); do
   mv "$file" "${file%%.html}";
 done
 
-# push(sync) all the html files without extension to S3 and set the content type to text/html by excluding file extensions and chunck folder
-aws s3 sync \
+# Push renamed HTML files with explicit content type
+aws s3 sync out s3://www.cathal.dev \
   --content-type "text/html" \
   --metadata-directive REPLACE \
-  ./out/ \
-  s3://www.cathal.dev/ \
   --exclude "_next/*" \
   --exclude "*.png" \
   --exclude "*.svg" \
@@ -31,9 +25,10 @@ aws s3 sync \
   --exclude "*.txt" \
   --exclude "*.webmanifest"
 
-# push(sync) all other kind of files such as images or SVGs
-aws s3 sync ./out/ s3://www.cathal.dev/ \
-  --exclude "*.*" \
+# Push remaining files
+aws s3 sync out s3://www.cathal.dev \
+  --exclude "*" \
+  --include "_next/*" \
   --include "*.png" \
   --include "*.svg" \
   --include "*.ico" \
