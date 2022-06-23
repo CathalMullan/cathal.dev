@@ -7,16 +7,16 @@ import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10 w-full border-b border-gray-200 dark:border-gray-600 bg-white dark:bg-[#111b27]">
-      <div className="container mx-auto flex h-16 items-center justify-between px-6 py-4">
+    <header className="sticky w-full border-b border-gray-200 bg-white pt-5 pb-5 dark:border-gray-600 dark:bg-[#111b27]">
+      <div className="container mx-auto flex items-center justify-between">
         <Link href="/">
-          <a className="flex items-center p-2">
-            <LightningBolt className="h-10 w-10 pr-2 text-amber-400" />
+          <a className="flex items-center space-x-2">
+            <LightningBolt className="h-8 w-8 text-amber-400" />
             <span className="text-xl font-bold">cathal.dev</span>
           </a>
         </Link>
 
-        <div className="flex items-center">
+        <div className="flex items-center space-x-8">
           <ThemeToggle />
           <GitHubLink />
           <LinkedInLink />

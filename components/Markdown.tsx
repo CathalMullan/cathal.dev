@@ -27,7 +27,7 @@ SyntaxHighlighter.registerLanguage('nix', nix)
 export default function Markdown({ content }: { content: string }) {
   return (
     <ReactMarkdown
-      className="prose mx-auto min-w-[50%] flex-grow pt-10 prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert"
+      className="prose mx-auto min-w-[50%] flex-grow pt-5 pb-5 prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert"
       remarkPlugins={[remarkGfm]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{

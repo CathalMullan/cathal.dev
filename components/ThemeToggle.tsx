@@ -16,11 +16,13 @@ export default function ThemeToggle() {
     return null
   }
 
-  const iconClass = 'w-6 h-6 fill-black dark:fill-white'
-
   return (
     <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label="Toggle theme">
-      {theme === 'light' ? <MoonIcon className={iconClass} /> : <SunIcon className={iconClass} />}
+      {theme === 'light' ? (
+        <MoonIcon className={'h-6 w-6 fill-black dark:fill-white'} />
+      ) : (
+        <SunIcon className={'h-6 w-6 fill-black dark:fill-white'} />
+      )}
     </button>
   )
 }
