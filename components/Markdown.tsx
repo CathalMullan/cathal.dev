@@ -25,24 +25,18 @@ PrismAsyncLight.registerLanguage('nix', nix)
 export default function Markdown({ content }: { content: string }) {
   return (
     <ReactMarkdown
-      className="prose mx-auto pt-10 prose-pre:p-0"
+      className="prose mx-auto flex-grow pt-10 prose-pre:rounded-md prose-pre:bg-inherit dark:prose-invert"
       remarkPlugins={[remarkGfm]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{
         code({ inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '')
 
-          if (!inline && match) {
-            return (
-              <PrismAsyncLight style={coldarkDark} language={match[1]} showLineNumbers={true} PreTag="div" {...props}>
-                {String(children).replace(/\n$/, '')}
-              </PrismAsyncLight>
-            )
-          }
-
           // Fallback to using 'bash' highlighting, so we still maintain a consistant style (over using 'code' as suggested)
+          const language = !inline && match ? match[1] : 'bash;'
+
           return (
-            <PrismAsyncLight style={coldarkDark} language={'bash'} showLineNumbers={true} PreTag="div" {...props}>
+            <PrismAsyncLight style={coldarkDark} language={language} showLineNumbers={true} {...props}>
               {String(children).replace(/\n$/, '')}
             </PrismAsyncLight>
           )

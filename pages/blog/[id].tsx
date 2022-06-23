@@ -13,7 +13,7 @@ export default function Blog({ blog }: { blog: MarkdownFile }) {
         <title>cathal.dev - {blog.title}</title>
       </Head>
 
-      <main>
+      <main className="bg-white dark:bg-slate-800">
         <Header />
         <Markdown content={blog.content} />
         <Footer />

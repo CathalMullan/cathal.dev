@@ -1,7 +1,3 @@
 export default function KeybaseTxtLink() {
-  return (
-    <a href="/keybase.txt" className="ml-6 block">
-      keybase.txt
-    </a>
-  )
+  return <a href="/keybase.txt">keybase.txt</a>
 }

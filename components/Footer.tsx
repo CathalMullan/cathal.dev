@@ -6,10 +6,10 @@ import SitemapLink from './links/SitemapLink'
 
 export default function Footer() {
   return (
-    <footer className="bottom-0 mt-12 w-full border-t pt-10 pb-10 text-sm">
+    <footer className="mt-12 w-full border-t bg-white pt-10 pb-10 text-sm dark:bg-slate-900">
       <div className="flex justify-center">Copyright © 2022 Cathal Mullan</div>
 
-      <div className="flex justify-center py-4">
+      <div className="flex justify-center space-x-4 py-2">
         <RobotsTxtLink />
         <SecurityTxtLink />
         <KeybaseTxtLink />

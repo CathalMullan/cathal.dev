@@ -10,7 +10,7 @@ export default function NotFoundPage() {
         <title>cathal.dev - 404</title>
       </Head>
 
-      <main>
+      <main className="bg-white dark:bg-slate-800">
         <Header />
 
         <section className="flex h-full items-center p-16">

@@ -17,11 +17,12 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
         <title>cathal.dev</title>
       </Head>
 
-      <main>
+      <main className="bg-white dark:bg-slate-800">
         <Header />
+
         <Markdown content={whoAmI.content} />
 
-        <article className="prose mx-auto pt-10">
+        <article className="prose mx-auto pt-10 dark:prose-invert">
           <h2>Blog Posts</h2>
           Content with a purpose:
           <ul>
@@ -35,7 +36,7 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
           </ul>
         </article>
 
-        <article className="prose mx-auto pt-10">
+        <article className="prose mx-auto pt-10 dark:prose-invert">
           <h2>Snippets</h2>
           Random notes:
           <ul>
@@ -48,9 +49,9 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
             ))}
           </ul>
         </article>
-      </main>
 
-      <Footer />
+        <Footer />
+      </main>
     </>
   )
 }

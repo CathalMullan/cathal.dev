@@ -13,7 +13,7 @@ export default function Blog({ snippet }: { snippet: MarkdownFile }) {
         <title>cathal.dev - {snippet.title}</title>
       </Head>
 
-      <main>
+      <main className="flex h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
         <Markdown content={snippet.content} />
         <Footer />

@@ -32,7 +32,6 @@ My website.
 
 Ordered by priority.
 
-- Light/Dark Mode
 - Tags
 - Search
 - Mermaid Diagrams
