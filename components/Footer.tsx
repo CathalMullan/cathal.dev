@@ -2,6 +2,7 @@ import CommitLink from './links/CommitLink'
 import KeybaseTxtLink from './links/KeybaseTxtLink'
 import RobotsTxtLink from './links/RobotsTxtLink'
 import SecurityTxtLink from './links/SecurityTxtLink'
+import SitemapLink from './links/SitemapLink'
 
 export default function Footer() {
   return (
@@ -12,6 +13,7 @@ export default function Footer() {
         <RobotsTxtLink />
         <SecurityTxtLink />
         <KeybaseTxtLink />
+        <SitemapLink />
       </div>
 
       <div className="flex justify-center">

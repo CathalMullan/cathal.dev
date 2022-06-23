@@ -23,6 +23,7 @@ aws s3 sync out s3://www.cathal.dev \
   --exclude "*.svg" \
   --exclude "*.ico" \
   --exclude "*.txt" \
+  --exclude "*.xml" \
   --exclude "*.webmanifest"
 
 # Push remaining files
@@ -33,4 +34,5 @@ aws s3 sync out s3://www.cathal.dev \
   --include "*.svg" \
   --include "*.ico" \
   --include "*.txt" \
+  --include "*.xml" \
   --include "*.webmanifest"
