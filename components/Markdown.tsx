@@ -36,7 +36,7 @@ export default function Markdown({ content }: { content: string }) {
           const language = !inline && match ? match[1] : 'bash;'
 
           return (
-            <SyntaxHighlighter style={coldarkDark} language={language} {...props}>
+            <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true} {...props}>
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
           )
