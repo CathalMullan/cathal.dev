@@ -11,7 +11,7 @@ Here's a sample file I use as a starting point for most projects.
 
 Other templates (e.g. [gitignore.io](https://gitignore.io)) are too unwieldy.
 
-```
+```ignore
 # MacOS
 .DS_Store
 

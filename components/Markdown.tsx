@@ -12,12 +12,14 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 // The default of shipping all languages results in a 2MB bundle, which I'd rather avoid
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
 import yaml from 'react-syntax-highlighter/dist/cjs/languages/prism/yaml'
+import ignore from 'react-syntax-highlighter/dist/cjs/languages/prism/ignore'
 import rust from 'react-syntax-highlighter/dist/cjs/languages/prism/rust'
 import python from 'react-syntax-highlighter/dist/cjs/languages/prism/python'
 import nix from 'react-syntax-highlighter/dist/cjs/languages/prism/nix'
 
 SyntaxHighlighter.registerLanguage('bash', bash)
 SyntaxHighlighter.registerLanguage('yaml', yaml)
+SyntaxHighlighter.registerLanguage('ignore', ignore)
 SyntaxHighlighter.registerLanguage('python', python)
 SyntaxHighlighter.registerLanguage('rust', rust)
 SyntaxHighlighter.registerLanguage('nix', nix)
