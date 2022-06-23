@@ -10,7 +10,7 @@ set -euxo pipefail
 aws s3 rm s3://www.cathal.dev --recursive
 
 # Rename HTML files to strip extensiom
-for file in $(find ./out -name "*.html"); do
+for file in $(find out -name "*.html"); do
   mv "$file" "${file%%.html}";
 done
 

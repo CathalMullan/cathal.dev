@@ -32,7 +32,6 @@ My website.
 
 Ordered by priority.
 
-- Site Map
 - Light/Dark Mode
 - Tags
 - Search

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next-sitemap && next export",
     "sync": "./scripts/sync.sh",
     "start": "next start",
     "lint": "next lint",
@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "4.5.9",
-    "glob": "^8.0.3",
+    "@next/env": "12.1.6",
+    "glob": "8.0.3",
     "next": "12.1.6",
+    "next-sitemap": "3.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "8.0.3",
@@ -24,7 +26,7 @@
   "devDependencies": {
     "@svgr/webpack": "6.2.1",
     "@tailwindcss/typography": "0.5.2",
-    "@types/glob": "^7.2.0",
+    "@types/glob": "7.2.0",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",

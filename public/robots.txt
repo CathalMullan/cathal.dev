@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+Host: https://cathal.dev
+Sitemap: https://cathal.dev/sitemap.xml
