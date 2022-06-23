@@ -92,3 +92,14 @@ resource "cloudflare_record" "cathal_dev_website_2" {
   ttl     = 1
   proxied = true
 }
+
+# Google Verification
+
+resource "cloudflare_record" "cathal_dev_google_verification" {
+  zone_id = cloudflare_zone.cathal_dev.id
+
+  name  = "@"
+  value = "google-site-verification=CUQ5GnwJKEzheQkuKyZezj94nuONoB7D8SINLPWi4QI"
+  type  = "TXT"
+  ttl   = 3600
+}
