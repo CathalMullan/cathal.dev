@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { PrismAsyncLight } from 'react-syntax-highlighter'
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 
 // Strange error when importing this theme, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -16,11 +16,11 @@ import rust from 'react-syntax-highlighter/dist/cjs/languages/prism/rust'
 import python from 'react-syntax-highlighter/dist/cjs/languages/prism/python'
 import nix from 'react-syntax-highlighter/dist/cjs/languages/prism/nix'
 
-PrismAsyncLight.registerLanguage('bash', bash)
-PrismAsyncLight.registerLanguage('yaml', yaml)
-PrismAsyncLight.registerLanguage('python', python)
-PrismAsyncLight.registerLanguage('rust', rust)
-PrismAsyncLight.registerLanguage('nix', nix)
+SyntaxHighlighter.registerLanguage('bash', bash)
+SyntaxHighlighter.registerLanguage('yaml', yaml)
+SyntaxHighlighter.registerLanguage('python', python)
+SyntaxHighlighter.registerLanguage('rust', rust)
+SyntaxHighlighter.registerLanguage('nix', nix)
 
 export default function Markdown({ content }: { content: string }) {
   return (
@@ -36,9 +36,9 @@ export default function Markdown({ content }: { content: string }) {
           const language = !inline && match ? match[1] : 'bash;'
 
           return (
-            <PrismAsyncLight style={coldarkDark} language={language} showLineNumbers={true} {...props}>
+            <SyntaxHighlighter style={coldarkDark} language={language} {...props}>
               {String(children).replace(/\n$/, '')}
-            </PrismAsyncLight>
+            </SyntaxHighlighter>
           )
         },
       }}
