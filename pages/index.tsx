@@ -20,7 +20,7 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
       <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
 
-        <article>
+        <article className="h-full flex-grow">
           <Markdown content={whoAmI.content} />
 
           <div className="prose mx-auto pt-10 dark:prose-invert">

@@ -6,6 +6,8 @@ export default function Document() {
       <Head>
         <meta name="description" content="Cathal Mullan's personal site" />
 
+        <link rel="preload" href="/fonts/JetBrainsMonoNL.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -13,7 +15,7 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
 
-      <body className="antialiased">
+      <body className="font-mono antialiased">
         {/* Hack to block FOUC */}
         <script>0</script>
 

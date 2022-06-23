@@ -15,19 +15,6 @@ My website.
 - DNS/CDN: `Cloudflare`
 - Compute: `AWS`
 
-## Pages
-
-- Home/Landing
-- About Me
-- CV/Resume
-- Blogs
-  - How My Site Works
-  - (...)
-- Projects
-  - ...
-- Knowledge Base
-  - ...
-
 ## TODO
 
 Ordered by priority.

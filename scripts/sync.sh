@@ -22,6 +22,7 @@ aws s3 sync out s3://www.cathal.dev \
   --exclude "*.png" \
   --exclude "*.svg" \
   --exclude "*.ico" \
+  --exclude "*.ttf" \
   --exclude "*.txt" \
   --exclude "*.xml" \
   --exclude "*.webmanifest"
@@ -33,6 +34,7 @@ aws s3 sync out s3://www.cathal.dev \
   --include "*.png" \
   --include "*.svg" \
   --include "*.ico" \
+  --include "*.ttf" \
   --include "*.txt" \
   --include "*.xml" \
   --include "*.webmanifest"
