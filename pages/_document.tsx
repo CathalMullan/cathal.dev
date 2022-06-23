@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="Cathal Mullan's personal site" />
+        <meta name="description" content="Cathal Mullan's Personal Site" />
 
         <link rel="preload" href="/fonts/JetBrainsMonoNL.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
 

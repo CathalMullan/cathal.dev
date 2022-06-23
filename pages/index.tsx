@@ -23,7 +23,7 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
         <article className="h-full flex-grow">
           <Markdown content={whoAmI.content} />
 
-          <div className="prose mx-auto pt-10 dark:prose-invert">
+          <section className="prose mx-auto min-w-[50%] pt-10 dark:prose-invert">
             <h2>Blog Posts</h2>
             Content with a purpose:
             <ul>
@@ -35,9 +35,6 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className="prose mx-auto pt-10 dark:prose-invert">
             <h2>Snippets</h2>
             Random notes:
             <ul>
@@ -49,7 +46,7 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
         </article>
 
         <Footer />

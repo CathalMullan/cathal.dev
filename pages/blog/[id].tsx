@@ -10,7 +10,7 @@ export default function Blog({ blog }: { blog: MarkdownFile }) {
   return (
     <>
       <Head>
-        <title>cathal.dev - {blog.title}</title>
+        <title>{blog.title}</title>
       </Head>
 
       <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
