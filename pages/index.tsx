@@ -17,37 +17,39 @@ export default function Index({ whoAmI, blogPosts, snippets }: IndexProps) {
         <title>cathal.dev</title>
       </Head>
 
-      <main className="bg-white dark:bg-slate-800">
+      <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
 
-        <Markdown content={whoAmI.content} />
+        <article>
+          <Markdown content={whoAmI.content} />
 
-        <article className="prose mx-auto pt-10 dark:prose-invert">
-          <h2>Blog Posts</h2>
-          Content with a purpose:
-          <ul>
-            {blogPosts.map(({ id, title, date }: MarkdownFile) => (
-              <li key={id}>
-                <a href={`/blog/${id}`}>
-                  {date}: {title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </article>
+          <div className="prose mx-auto pt-10 dark:prose-invert">
+            <h2>Blog Posts</h2>
+            Content with a purpose:
+            <ul>
+              {blogPosts.map(({ id, title, date }: MarkdownFile) => (
+                <li key={id}>
+                  <a href={`/blog/${id}`}>
+                    {date}: {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <article className="prose mx-auto pt-10 dark:prose-invert">
-          <h2>Snippets</h2>
-          Random notes:
-          <ul>
-            {snippets.map(({ id, title, date }: MarkdownFile) => (
-              <li key={id}>
-                <a href={`/snippets/${id}`}>
-                  {date}: {title}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="prose mx-auto pt-10 dark:prose-invert">
+            <h2>Snippets</h2>
+            Random notes:
+            <ul>
+              {snippets.map(({ id, title, date }: MarkdownFile) => (
+                <li key={id}>
+                  <a href={`/snippets/${id}`}>
+                    {date}: {title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </article>
 
         <Footer />

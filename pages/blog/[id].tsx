@@ -13,7 +13,7 @@ export default function Blog({ blog }: { blog: MarkdownFile }) {
         <title>cathal.dev - {blog.title}</title>
       </Head>
 
-      <main className="bg-white dark:bg-slate-800">
+      <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
         <Markdown content={blog.content} />
         <Footer />
@@ -25,6 +25,7 @@ export default function Blog({ blog }: { blog: MarkdownFile }) {
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const id = params ? `${params.id}` : ''
   const blog = fetchMarkdownFile('blog', id)
+
   return { props: { blog } }
 }
 

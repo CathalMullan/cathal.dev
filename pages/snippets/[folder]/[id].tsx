@@ -13,7 +13,7 @@ export default function Blog({ snippet }: { snippet: MarkdownFile }) {
         <title>cathal.dev - {snippet.title}</title>
       </Head>
 
-      <main className="flex h-screen flex-col bg-white dark:bg-slate-800">
+      <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
         <Markdown content={snippet.content} />
         <Footer />
@@ -25,8 +25,8 @@ export default function Blog({ snippet }: { snippet: MarkdownFile }) {
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const id = params ? `${params.id}` : ''
   const folder = params ? `${params.folder}` : ''
-
   const snippet = fetchNestedMarkdownFile('snippets', folder, id)
+
   return { props: { snippet } }
 }
 
