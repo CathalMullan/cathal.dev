@@ -21,10 +21,11 @@ Ordered by priority.
 
 - Search
 - Mermaid Diagrams
-- SEO
+- SEO (`next-seo` ?)
 - Related Posts
 - Share on (Reddit/HackerNews/Twiter)
 - Notifications
 - RSS
-- Remove "unneeded" dependencies (next-sitemap, next-themes).
+- Remove "unneeded" dependencies (next-sitemap, next-themes)
 - Filter by year (`/year/{id}`)
+- Custom Prism syntax theme (Tokyo Night inspired)

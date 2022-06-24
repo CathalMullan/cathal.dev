@@ -2,24 +2,14 @@ import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { MarkdownFile } from 'lib/markdown'
 import Markdown from 'components/Markdown'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-import Head from 'next/head'
 import { fetchBlogStaticPaths, fetchBlogStaticProps } from 'lib/blog'
+import PageLayout from 'components/PageLayout'
 
 export default function BlogPage({ blog }: { blog: MarkdownFile }) {
   return (
-    <>
-      <Head>
-        <title>{blog.title}</title>
-      </Head>
-
-      <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
-        <Header />
-        <Markdown {...blog} />
-        <Footer />
-      </main>
-    </>
+    <PageLayout title={blog.title}>
+      <Markdown {...blog} />
+    </PageLayout>
   )
 }
 

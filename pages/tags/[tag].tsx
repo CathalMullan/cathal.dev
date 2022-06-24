@@ -1,10 +1,8 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { MarkdownFile } from 'lib/markdown'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
-import Head from 'next/head'
 import { fetchTagsStaticPaths, fetchTagsStaticProps } from 'lib/tags'
+import PageLayout from 'components/PageLayout'
 
 interface TagPageProps {
   tag: string
@@ -16,7 +14,7 @@ export default function TagPage({ tag, blogPosts, snippets }: TagPageProps) {
   let renderBlogPosts
   if (blogPosts.length > 0) {
     renderBlogPosts = (
-      <>
+      <div>
         <h2>Blog Posts:</h2>
         <ul>
           {blogPosts.map((page: MarkdownFile) => (
@@ -25,14 +23,14 @@ export default function TagPage({ tag, blogPosts, snippets }: TagPageProps) {
             </li>
           ))}
         </ul>
-      </>
+      </div>
     )
   }
 
   let renderSnippets
   if (snippets.length > 0) {
     renderSnippets = (
-      <>
+      <div>
         <h2>Snippets:</h2>
         <ul>
           {snippets.map((page: MarkdownFile) => (
@@ -41,29 +39,17 @@ export default function TagPage({ tag, blogPosts, snippets }: TagPageProps) {
             </li>
           ))}
         </ul>
-      </>
+      </div>
     )
   }
 
   return (
-    <>
-      <Head>
-        <title>{tag}</title>
-      </Head>
+    <PageLayout title={tag}>
+      <h1>{tag} content</h1>
 
-      <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
-        <Header />
-
-        <div className="prose mx-auto min-w-[52rem] flex-grow pt-5 pb-5 prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
-          <h1>{tag} content</h1>
-
-          {renderBlogPosts}
-          {renderSnippets}
-        </div>
-
-        <Footer />
-      </main>
-    </>
+      {renderBlogPosts}
+      {renderSnippets}
+    </PageLayout>
   )
 }
 

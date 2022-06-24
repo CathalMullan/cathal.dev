@@ -14,6 +14,8 @@ export type MarkdownFile = {
 
 export const articlesDirectory = path.join(process.cwd(), 'articles')
 
+// FIXME: So much duplicated logic between these 'lib' files, cleanup!
+
 export function fetchMarkdownFiles(directory: string): Array<MarkdownFile> {
   const markdownDirectory = path.join(articlesDirectory, directory)
   const markdownFileNames = glob.sync(`${markdownDirectory}/**/*.md`)
@@ -37,5 +39,3 @@ export function fetchMarkdownFiles(directory: string): Array<MarkdownFile> {
 
   return markdownFiles
 }
-
-// FIXME: So much duplicated logic here, cleanup!
