@@ -29,7 +29,7 @@ SyntaxHighlighter.registerLanguage('nix', nix)
 export default function Markdown({ content, date, tags }: { content: string; date: string; tags: Array<string> }) {
   return (
     <div className="prose mx-auto min-w-[52rem] flex-grow pt-5 pb-5 prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
-      <div className="prose py-2 dark:prose-invert">
+      <div className="prose py-2 pb-4 dark:prose-invert">
         <MarkdownDate date={date} />
 
         <div className="space-x-4 py-2">

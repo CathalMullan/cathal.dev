@@ -22,7 +22,9 @@ Ordered by priority.
 - Search
 - Mermaid Diagrams
 - SEO
+- Related Posts
 - Share on (Reddit/HackerNews/Twiter)
 - Notifications
 - RSS
-- Related Posts
+- Remove "unneeded" dependencies (next-sitemap, next-themes).
+- Filter by year (`/year/{id}`)

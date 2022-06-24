@@ -50,15 +50,11 @@ export function fetchTagsStaticProps(tag: string): Array<MarkdownFile> {
 }
 
 export function fetchTagsStaticPaths() {
-  const tagsPaths: Array<{ params: { id: string } }> = []
+  const tagsPaths: Array<{ params: { tag: string } }> = []
   const lookupTags = fetchMarkdownTags()
 
   lookupTags.map((tag) => {
-    tagsPaths.push({
-      params: {
-        id: tag,
-      },
-    })
+    tagsPaths.push({ params: { tag } })
   })
 
   return tagsPaths
