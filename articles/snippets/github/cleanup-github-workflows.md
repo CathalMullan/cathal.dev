@@ -1,6 +1,7 @@
 ---
 title: 'Cleanup GitHub Workflows'
 date: '2022-07-01'
+tags: ['github', 'github-actions']
 ---
 
 # Cleanup GitHub Workflows

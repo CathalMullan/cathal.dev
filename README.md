@@ -19,7 +19,6 @@ My website.
 
 Ordered by priority.
 
-- Tags
 - Search
 - Mermaid Diagrams
 - SEO

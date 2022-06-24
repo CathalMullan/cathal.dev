@@ -15,10 +15,7 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
 
-      <body className="font-mono antialiased">
-        {/* Hack to block FOUC */}
-        <script>0</script>
-
+      <body className="font-mono">
         <Main />
         <NextScript />
       </body>

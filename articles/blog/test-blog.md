@@ -1,6 +1,7 @@
 ---
 title: 'Test Blog'
 date: '2022-07-01'
+tags: ['test']
 ---
 
 # Test Blog

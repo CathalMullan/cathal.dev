@@ -1,6 +1,7 @@
 ---
 title: 'Running GitHub Actions Locally'
 date: '2022-07-01'
+tags: ['github', 'github-actions']
 ---
 
 # Running GitHub Actions Locally

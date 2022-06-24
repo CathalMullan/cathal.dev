@@ -1,6 +1,7 @@
 ---
 title: 'Search for Nix Files'
 date: '2022-07-01'
+tags: ['nix']
 ---
 
 # Search for Nix Files

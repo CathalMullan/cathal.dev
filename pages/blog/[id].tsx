@@ -1,12 +1,13 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
-import { MarkdownFile, fetchMarkdownFile, fetchMarkdownIDs } from 'lib/markdown'
+import { MarkdownFile } from 'lib/markdown'
 import Markdown from 'components/Markdown'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Head from 'next/head'
+import { fetchBlogStaticPaths, fetchBlogStaticProps } from 'lib/blog'
 
-export default function Blog({ blog }: { blog: MarkdownFile }) {
+export default function BlogPage({ blog }: { blog: MarkdownFile }) {
   return (
     <>
       <Head>
@@ -15,7 +16,7 @@ export default function Blog({ blog }: { blog: MarkdownFile }) {
 
       <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
-        <Markdown content={blog.content} />
+        <Markdown {...blog} />
         <Footer />
       </main>
     </>
@@ -24,14 +25,14 @@ export default function Blog({ blog }: { blog: MarkdownFile }) {
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const id = params ? `${params.id}` : ''
-  const blog = fetchMarkdownFile('blog', id)
+  const blog = fetchBlogStaticProps('blog', id)
 
   return { props: { blog } }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: fetchMarkdownIDs('blog'),
+    paths: fetchBlogStaticPaths('blog'),
     fallback: false,
   }
 }

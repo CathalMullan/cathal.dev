@@ -1,6 +1,7 @@
 ---
 title: 'Custom Git Merge Logic'
 date: '2022-07-01'
+tags: ['git']
 ---
 
 # Custom Git Merge Logic

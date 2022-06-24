@@ -1,6 +1,7 @@
 ---
 title: 'Hiding Git Commits'
 date: '2022-07-01'
+tags: ['git']
 ---
 
 # Hiding Git Commits

@@ -1,6 +1,7 @@
 ---
 title: 'Ignoring Git Files'
 date: '2022-07-01'
+tags: ['git']
 ---
 
 # Ignoring Git Files

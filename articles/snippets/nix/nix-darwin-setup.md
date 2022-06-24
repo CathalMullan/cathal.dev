@@ -1,6 +1,7 @@
 ---
 title: 'Nix Darwin Setup'
 date: '2022-07-01'
+tags: ['nix', 'nix-darwin']
 ---
 
 # Nix Darwin Setup
