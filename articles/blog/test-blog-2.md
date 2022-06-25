@@ -1,34 +1,12 @@
 ---
-title: 'Test Blog'
+title: 'Test Blog #2'
 date: '2022-07-01'
-tags: ['test']
+tags: ['test', 'python']
 ---
 
-# Test Blog
+# Test Blog #2
 
 This is a test Markdown document.
-
-## Here is a header
-
-Look, some Rust code!
-
-```rust
-use tokio::io::AsyncWriteExt;
-use tokio::net::TcpStream;
-
-use std::error::Error;
-
-#[tokio::main]
-pub async fn main() -> Result<(), Box<dyn Error>> {
-    let mut stream = TcpStream::connect("127.0.0.1:4444").await?;
-    println!("created stream");
-
-    let result = stream.write(b"hello world\n").await;
-    println!("wrote to stream; success={:?}", result.is_ok());
-
-    Ok(())
-}
-```
 
 ## Here is another header
 
@@ -75,47 +53,4 @@ class MyStack(TerraformStack):
 app = App()
 MyStack(app, "python-aws")
 app.synth()
-```
-
-## Here is yet another header
-
-Look, some Nix code!
-
-```nix
-{
-  description = "cathal.dev";
-
-  inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-22.05";
-    };
-
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        inherit (pkgs) lib mkShell;
-
-        pkgs = import nixpkgs {
-          inherit system;
-        };
-      in
-      rec {
-        # nix develop
-        devShell = mkShell {
-          name = "cathal-dev-shell";
-
-          buildInputs = with pkgs; [
-            # Node
-            nodejs-18_x
-            nodePackages.pnpm
-          ];
-        };
-      });
-}
 ```

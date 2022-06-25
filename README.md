@@ -19,7 +19,6 @@ My website.
 
 Ordered by priority.
 
-- Search
 - SEO (`next-seo` ?)
 - Related Posts
 - Share on (Reddit/HackerNews/Twiter)
