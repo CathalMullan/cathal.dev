@@ -2,13 +2,13 @@ import { MarkdownFile, fetchMarkdownFiles } from 'lib/markdown'
 import { fetchMarkdownTags } from 'lib/tags'
 import PageLayout from 'components/PageLayout'
 
-interface IndexProps {
-  blogPosts: Array<MarkdownFile>
-  snippets: Array<MarkdownFile>
-  tags: Array<string>
+interface Props {
+  blogPosts: MarkdownFile[]
+  snippets: MarkdownFile[]
+  tags: string[]
 }
 
-export default function Index({ blogPosts, snippets, tags }: IndexProps) {
+export default function Index({ blogPosts, snippets, tags }: Props) {
   return (
     <PageLayout title="cathal.dev">
       <article className="h-full flex-grow">
@@ -18,37 +18,44 @@ export default function Index({ blogPosts, snippets, tags }: IndexProps) {
           <p>{'My interests include Rust, Python and Nix.'}</p>
           <p>{"This site will likely cover these topics in time, but for now it's a work in progress."}</p>
 
-          <section>
-            <h2>Blog Posts:</h2>
-            <ul>
-              {blogPosts.map(({ id, title }: MarkdownFile) => (
-                <li key={id}>
-                  <a href={`/blog/${id}`}>{title}</a>
-                </li>
-              ))}
-            </ul>
-          </section>
+          {blogPosts.length > 0 && (
+            <section>
+              <h2>Blog Posts:</h2>
+              <ul>
+                {blogPosts.map(({ id, title }: MarkdownFile) => (
+                  <li key={id}>
+                    <a href={`/blog/${id}`}>{title}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
-          <section>
-            <h2>Snippets:</h2>
-            <ul>
-              {snippets.map(({ id, title }: MarkdownFile) => (
-                <li key={id}>
-                  <a href={`/snippets/${id}`}>{title}</a>
-                </li>
-              ))}
-            </ul>
-          </section>
-          <h2>Tags:</h2>
+          {snippets.length > 0 && (
+            <section>
+              <h2>Snippets:</h2>
+              <ul>
+                {snippets.map(({ id, title }: MarkdownFile) => (
+                  <li key={id}>
+                    <a href={`/snippets/${id}`}>{title}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
-          <ul>
-            {tags.map((tag: string) => (
-              <li key={tag}>
-                <a href={`/tags/${tag}`}>{tag}</a>
-              </li>
-            ))}
-          </ul>
-          <section></section>
+          {tags.length > 0 && (
+            <section>
+              <h2>Tags:</h2>
+              <ul>
+                {tags.map((tag: string) => (
+                  <li key={tag}>
+                    <a href={`/tags/${tag}`}>{tag}</a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </section>
       </article>
     </PageLayout>

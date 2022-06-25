@@ -3,7 +3,7 @@ set -euxo pipefail
 
 #
 # S3 can't handle requests to `/about` being routed to `/about.html`.
-# So we need to manually rename all HTML files first.
+# So we need to manually rename all HTML files before we upload them.
 #
 
 # Truncate bucket

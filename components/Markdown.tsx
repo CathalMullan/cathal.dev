@@ -26,7 +26,13 @@ SyntaxHighlighter.registerLanguage('python', python)
 SyntaxHighlighter.registerLanguage('rust', rust)
 SyntaxHighlighter.registerLanguage('nix', nix)
 
-export default function Markdown({ content, date, tags }: { content: string; date: string; tags: Array<string> }) {
+interface Props {
+  content: string
+  date: string
+  tags: string[]
+}
+
+export default function Markdown({ content, date, tags }: Props) {
   return (
     <div className="prose mx-auto min-w-[52rem] flex-grow prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
       <div className="prose py-2 pb-4 dark:prose-invert">

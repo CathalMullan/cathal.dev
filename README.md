@@ -20,7 +20,6 @@ My website.
 Ordered by priority.
 
 - Search
-- Mermaid Diagrams
 - SEO (`next-seo` ?)
 - Related Posts
 - Share on (Reddit/HackerNews/Twiter)
@@ -29,3 +28,5 @@ Ordered by priority.
 - Remove "unneeded" dependencies (next-sitemap, next-themes)
 - Filter by year (`/year/{id}`)
 - Custom Prism syntax theme (Tokyo Night inspired)
+- Table of Contents
+- Mermaid Diagrams

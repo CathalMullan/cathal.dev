@@ -3,12 +3,12 @@ import React, { ReactNode } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 
-type PageLayoutProps = {
+type Props = {
   title: string
   children: ReactNode
 }
 
-export default function PageLayout({ title, children }: PageLayoutProps) {
+export default function PageLayout({ title, children }: Props) {
   return (
     <>
       <Head>

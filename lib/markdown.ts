@@ -9,14 +9,14 @@ export type MarkdownFile = {
   content: string
   title: string
   date: string
-  tags: Array<string>
+  tags: string[]
 }
 
 export const articlesDirectory = path.join(process.cwd(), 'articles')
 
 // FIXME: So much duplicated logic between these 'lib' files, cleanup!
 
-export function fetchMarkdownFiles(directory: string): Array<MarkdownFile> {
+export function fetchMarkdownFiles(directory: string): MarkdownFile[] {
   const markdownDirectory = path.join(articlesDirectory, directory)
   const markdownFileNames = glob.sync(`${markdownDirectory}/**/*.md`)
 

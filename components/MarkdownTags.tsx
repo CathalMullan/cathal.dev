@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MarkdownTags({ tags }: { tags: Array<string> }) {
+export default function MarkdownTags({ tags }: { tags: string[] }) {
   return (
     <>
       {tags.map((tag: string) => (

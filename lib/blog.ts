@@ -8,7 +8,7 @@ export function fetchBlogStaticPaths(directory: string) {
   const markdownDirectory = path.join(articlesDirectory, directory)
   const markdownFileNames = glob.sync(`${markdownDirectory}/**/*.md`)
 
-  const blogPaths: Array<{ params: { id: string } }> = []
+  const blogPaths: { params: { id: string } }[] = []
   markdownFileNames.map((filePath) => {
     const relativePath = path.relative(markdownDirectory, filePath)
     const id = relativePath.replace(/[.]md$/, '')

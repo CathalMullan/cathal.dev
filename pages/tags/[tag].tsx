@@ -3,52 +3,44 @@ import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { MarkdownFile } from 'lib/markdown'
 import { fetchTagsStaticPaths, fetchTagsStaticProps } from 'lib/tags'
 import PageLayout from 'components/PageLayout'
+import Link from 'next/link'
 
-interface TagPageProps {
+interface Props {
   tag: string
-  blogPosts: Array<MarkdownFile>
-  snippets: Array<MarkdownFile>
+  blogPosts: MarkdownFile[]
+  snippets: MarkdownFile[]
 }
 
-export default function TagPage({ tag, blogPosts, snippets }: TagPageProps) {
-  let renderBlogPosts
-  if (blogPosts.length > 0) {
-    renderBlogPosts = (
-      <div>
-        <h2>Blog Posts:</h2>
-        <ul>
-          {blogPosts.map((page: MarkdownFile) => (
-            <li key={page.title}>
-              <a href={`/${page.url}`}>{page.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
-  let renderSnippets
-  if (snippets.length > 0) {
-    renderSnippets = (
-      <div>
-        <h2>Snippets:</h2>
-        <ul>
-          {snippets.map((page: MarkdownFile) => (
-            <li key={page.title}>
-              <a href={`/${page.url}`}>{page.title}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-
+export default function TagPage({ tag, blogPosts, snippets }: Props) {
   return (
     <PageLayout title={tag}>
       <h1>{tag} content</h1>
 
-      {renderBlogPosts}
-      {renderSnippets}
+      {blogPosts.length > 0 && (
+        <div>
+          <h2>Blog Posts:</h2>
+          <ul>
+            {blogPosts.map((page: MarkdownFile) => (
+              <li key={page.title}>
+                <a href={`/${page.url}`}>{page.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {snippets.length > 0 && (
+        <div>
+          <h2>Snippets:</h2>
+          <ul>
+            {snippets.map(({ id, url, title }: MarkdownFile) => (
+              <li key={id}>
+                <Link href={`/${url}`}>{title}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </PageLayout>
   )
 }

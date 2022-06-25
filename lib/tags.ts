@@ -12,7 +12,7 @@ export function fetchMarkdownTags() {
     const article = fs.readFileSync(filePath, 'utf8')
     const { data } = matter(article)
 
-    const tags: Array<string> = data.tags
+    const tags: string[] = data.tags
     tags.forEach((tag) => {
       markdownTags.add(tag)
     })
@@ -21,10 +21,10 @@ export function fetchMarkdownTags() {
   return Array.from(markdownTags).sort()
 }
 
-export function fetchTagsStaticProps(tag: string): Array<MarkdownFile> {
+export function fetchTagsStaticProps(tag: string): MarkdownFile[] {
   const markdownFileNames = glob.sync(`${articlesDirectory}/**/*.md`)
 
-  const pages: Array<MarkdownFile> = []
+  const pages: MarkdownFile[] = []
   markdownFileNames.map((filePath) => {
     const article = fs.readFileSync(filePath, 'utf8')
     const { data } = matter(article)
@@ -33,7 +33,7 @@ export function fetchTagsStaticProps(tag: string): Array<MarkdownFile> {
     const urlPath = path.relative(articlesDirectory, filePath)
     const url = urlPath.replace(/[.]md$/, '')
 
-    const tags: Array<string> = data.tags
+    const tags: string[] = data.tags
     if (tags.includes(tag)) {
       pages.push({
         id: id,
@@ -50,7 +50,7 @@ export function fetchTagsStaticProps(tag: string): Array<MarkdownFile> {
 }
 
 export function fetchTagsStaticPaths() {
-  const tagsPaths: Array<{ params: { tag: string } }> = []
+  const tagsPaths: { params: { tag: string } }[] = []
   const lookupTags = fetchMarkdownTags()
 
   lookupTags.map((tag) => {
