@@ -1,7 +1,7 @@
 ---
 title: 'GitHub Actions Debug'
 date: '2022-07-01'
-tags: ['github', 'github-actions']
+tags: ['github', 'github_actions']
 ---
 
 # GitHub Actions Debug

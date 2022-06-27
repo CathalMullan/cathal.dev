@@ -19,10 +19,8 @@ My website.
 
 Ordered by priority.
 
-- Allow search to pull/set from url query param?
-- SEO (`next-seo` ?)
+- Twitter/Discord share cards (\_document.tsx links)
 - Related Posts
-- Share on (Reddit/HackerNews/Twiter)
 - Notifications
 - RSS
 - Remove "unneeded" dependencies (next-sitemap, next-themes)
