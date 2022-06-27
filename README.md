@@ -19,6 +19,7 @@ My website.
 
 Ordered by priority.
 
+- Pretty MarkdownFile Showcase (see https://blog.cloudflare.com)
 - CSP
 - Related Posts
 - Notifications
