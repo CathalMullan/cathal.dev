@@ -16,6 +16,7 @@ export default function RedditShare({ url, title }: Props) {
       href={`https://reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`}
       target="_blank"
       rel="noreferrer"
+      aria-label="Share on Reddit"
     >
       <RedditIcon className="h-6 w-6" />
     </a>

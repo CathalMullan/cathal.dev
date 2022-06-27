@@ -16,6 +16,7 @@ export default function HackerNewsShare({ url, title }: Props) {
       href={`https://news.ycombinator.com/submitlink?u=${encodedUrl}&t=${encodedTitle}`}
       target="_blank"
       rel="noreferrer"
+      aria-label="Share on HackerNews"
     >
       <HackerNewsIcon className="h-8 w-8" />
     </a>

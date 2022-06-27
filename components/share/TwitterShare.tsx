@@ -18,6 +18,7 @@ export default function TwitterShare({ url, title, tags }: Props) {
       href={`https://twitter.com/share?text=${encodedTitle}&url=${encodedUrl}&hashtags=${encodedHashtags}`}
       target="_blank"
       rel="noreferrer"
+      aria-label="Share on Twitter"
     >
       <TwitterIcon className="h-6 w-6" />
     </a>
