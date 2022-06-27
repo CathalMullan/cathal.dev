@@ -34,8 +34,8 @@ interface Props {
 
 export default function Markdown({ content, date, tags }: Props) {
   return (
-    <div className="prose mx-auto min-w-[52rem] flex-grow prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
-      <div className="prose py-2 pb-4 dark:prose-invert">
+    <div className="prose mx-auto prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
+      <div className="py-2 pb-4">
         <MarkdownDate date={date} />
 
         <div className="space-x-4 py-2">
@@ -51,7 +51,7 @@ export default function Markdown({ content, date, tags }: Props) {
             const match = /language-(\w+)/.exec(className || '')
 
             // Fallback to using 'bash' highlighting, so we still maintain a consistant style (over using 'code' as suggested)
-            const language = !inline && match ? match[1] : 'bash;'
+            const language = !inline && match ? match[1] : 'bash'
 
             return (
               <SyntaxHighlighter

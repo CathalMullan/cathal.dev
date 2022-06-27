@@ -1,7 +1,4 @@
 import Link from 'next/link'
-import GitHubLink from 'components/links/GitHubLink'
-import LinkedInLink from 'components/links/LinkedInLink'
-import EmailLink from './links/EmailLink'
 import LightningBolt from 'public/svg/LightningBolt.svg'
 import ThemeToggle from './ThemeToggle'
 import SearchLink from './links/SearchLink'
@@ -20,9 +17,6 @@ export default function Header() {
         <div className="flex items-center space-x-8 pr-8">
           <SearchLink />
           <ThemeToggle />
-          <GitHubLink />
-          <LinkedInLink />
-          <EmailLink />
         </div>
       </div>
     </header>

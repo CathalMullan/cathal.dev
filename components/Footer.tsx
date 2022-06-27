@@ -1,19 +1,17 @@
 import CommitLink from './links/CommitLink'
-import KeybaseTxtLink from './links/KeybaseTxtLink'
-import RobotsTxtLink from './links/RobotsTxtLink'
-import SecurityTxtLink from './links/SecurityTxtLink'
-import SitemapLink from './links/SitemapLink'
+import GitHubLink from 'components/links/GitHubLink'
+import LinkedInLink from 'components/links/LinkedInLink'
+import EmailLink from './links/EmailLink'
 
 export default function Footer() {
   return (
     <footer className="border-gray-2 border-t bg-white pt-5 pb-5 text-sm dark:border-gray-600 dark:bg-[#111b27]">
       <div className="flex justify-center">Copyright © 2022 Cathal Mullan</div>
 
-      <div className="flex justify-center space-x-4 py-2">
-        <RobotsTxtLink />
-        <SecurityTxtLink />
-        <KeybaseTxtLink />
-        <SitemapLink />
+      <div className="flex items-center justify-center space-x-10 py-2">
+        <GitHubLink />
+        <LinkedInLink />
+        <EmailLink />
       </div>
 
       <div className="flex justify-center">

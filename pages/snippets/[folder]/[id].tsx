@@ -1,14 +1,14 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { MarkdownFile } from 'lib/markdown'
-import Markdown from 'components/Markdown'
+import MarkdownCode from 'components/MarkdownCode'
 import { fetchSnippetsStaticPaths, fetchSnippetsStaticProps } from 'lib/snippets'
 import PageLayout from 'components/PageLayout'
 
 export default function SnippetPage({ snippet }: { snippet: MarkdownFile }) {
   return (
     <PageLayout title={snippet.title}>
-      <Markdown {...snippet} />
+      <MarkdownCode {...snippet} />
     </PageLayout>
   )
 }

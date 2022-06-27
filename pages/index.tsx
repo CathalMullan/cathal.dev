@@ -11,8 +11,8 @@ interface Props {
 export default function Index({ blogPosts, snippets, tags }: Props) {
   return (
     <PageLayout title="cathal.dev">
-      <article className="h-full flex-grow">
-        <section className="prose mx-auto min-w-[52rem] pt-5 pb-5 dark:prose-invert">
+      <article className="pt-5 pb-5">
+        <section className="prose mx-auto prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
           <h1>About Me</h1>
           <p>{"Hi, I'm Cathal Mullan, a Software Engineer."}</p>
           <p>{'My interests include Rust, Python and Nix.'}</p>

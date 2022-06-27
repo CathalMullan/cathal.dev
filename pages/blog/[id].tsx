@@ -1,14 +1,14 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { MarkdownFile } from 'lib/markdown'
-import Markdown from 'components/Markdown'
+import MarkdownCode from 'components/MarkdownCode'
 import { fetchBlogStaticPaths, fetchBlogStaticProps } from 'lib/blog'
 import PageLayout from 'components/PageLayout'
 
 export default function BlogPage({ blog }: { blog: MarkdownFile }) {
   return (
     <PageLayout title={blog.title}>
-      <Markdown {...blog} />
+      <MarkdownCode {...blog} />
     </PageLayout>
   )
 }

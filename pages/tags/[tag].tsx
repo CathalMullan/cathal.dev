@@ -14,33 +14,35 @@ interface Props {
 export default function TagPage({ tag, blogPosts, snippets }: Props) {
   return (
     <PageLayout title={tag}>
-      <h1>{tag} content</h1>
+      <section className="prose mx-auto prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
+        <h1>{tag} content</h1>
 
-      {blogPosts.length > 0 && (
-        <div>
-          <h2>Blog Posts:</h2>
-          <ul>
-            {blogPosts.map((page: MarkdownFile) => (
-              <li key={page.title}>
-                <a href={`/${page.url}`}>{page.title}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+        {blogPosts.length > 0 && (
+          <section>
+            <h2>Blog Posts:</h2>
+            <ul>
+              {blogPosts.map(({ id, url, title }: MarkdownFile) => (
+                <li key={id}>
+                  <Link href={`/${url}`}>{title}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-      {snippets.length > 0 && (
-        <div>
-          <h2>Snippets:</h2>
-          <ul>
-            {snippets.map(({ id, url, title }: MarkdownFile) => (
-              <li key={id}>
-                <Link href={`/${url}`}>{title}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+        {snippets.length > 0 && (
+          <section>
+            <h2>Snippets:</h2>
+            <ul>
+              {snippets.map(({ id, url, title }: MarkdownFile) => (
+                <li key={id}>
+                  <Link href={`/${url}`}>{title}</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </section>
     </PageLayout>
   )
 }

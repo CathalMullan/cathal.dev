@@ -19,6 +19,8 @@ My website.
 
 Ordered by priority.
 
+- Deduplicate `prose` logic
+- Allow search to pull/set from url query param?
 - SEO (`next-seo` ?)
 - Related Posts
 - Share on (Reddit/HackerNews/Twiter)
