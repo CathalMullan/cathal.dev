@@ -19,7 +19,8 @@ My website.
 
 Ordered by priority.
 
-- Deduplicate `prose` logic
+- Cleanup articles fetching logic.
+- Move 'about-me' to Markdown file.
 - Allow search to pull/set from url query param?
 - SEO (`next-seo` ?)
 - Related Posts

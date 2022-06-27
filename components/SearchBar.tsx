@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SearchIcon from 'public/svg/SearchIcon.svg'
 import Fuse from 'fuse.js'
 import { MarkdownFile } from 'lib/markdown'
+import RenderedText from './RenderedText'
 
 interface Props {
   markdownPages: MarkdownFile[]
@@ -24,7 +25,7 @@ export default function SearchBar({ markdownPages }: Props) {
   }
 
   return (
-    <div className="prose mx-auto prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
+    <RenderedText>
       <div className="relative">
         <div className="absolute inset-y-0 flex items-center pl-3">
           <SearchIcon className="h-5 w-5 fill-black" />
@@ -48,6 +49,6 @@ export default function SearchBar({ markdownPages }: Props) {
           ))}
         </ul>
       )}
-    </div>
+    </RenderedText>
   )
 }

@@ -34,7 +34,7 @@ interface Props {
 
 export default function Markdown({ content, date, tags }: Props) {
   return (
-    <div className="prose mx-auto prose-pre:rounded-md prose-pre:bg-inherit prose-pre:text-sm dark:prose-invert">
+    <>
       <div className="py-2 pb-4">
         <MarkdownDate date={date} />
 
@@ -54,13 +54,7 @@ export default function Markdown({ content, date, tags }: Props) {
             const language = !inline && match ? match[1] : 'bash'
 
             return (
-              <SyntaxHighlighter
-                style={coldarkDark}
-                language={language}
-                codeTagProps={{ style: { fontFamily: 'JetBrains Mono NL' } }}
-                showLineNumbers={true}
-                {...props}
-              >
+              <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true} {...props}>
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             )
@@ -69,6 +63,6 @@ export default function Markdown({ content, date, tags }: Props) {
       >
         {content}
       </ReactMarkdown>
-    </div>
+    </>
   )
 }
