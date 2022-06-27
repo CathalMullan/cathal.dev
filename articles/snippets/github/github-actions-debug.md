@@ -1,5 +1,6 @@
 ---
 title: 'GitHub Actions Debug'
+description: 'Using TMate to SSH into a GitHub runner'
 date: '2022-07-01'
 tags: ['github', 'github_actions']
 ---

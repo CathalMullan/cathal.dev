@@ -1,5 +1,6 @@
 ---
 title: 'Hiding Git Commits'
+description: "How to use '.git-blame-ignore-revs' to hide unwanted commits"
 date: '2022-07-01'
 tags: ['git']
 ---

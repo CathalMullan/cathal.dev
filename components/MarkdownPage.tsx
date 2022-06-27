@@ -5,18 +5,22 @@ import RenderedMarkdown from './RenderedMarkdown'
 import TwitterShare from './share/TwitterShare'
 import RedditShare from './share/RedditShare'
 import HackerNewsShare from './share/HackerNewsShare'
+import SEO from './SEO'
 
 interface Props {
   url: string
   title: string
+  description: string
   content: string
   date: string
   tags: string[]
 }
 
-export default function MarkdownPage({ url, title, content, date, tags }: Props) {
+export default function MarkdownPage({ url, title, description, content, date, tags }: Props) {
   return (
     <>
+      <SEO url={url} title={title} description={description} tags={tags} />
+
       <div className="py-2 pb-4">
         <MarkdownDate date={date} />
 

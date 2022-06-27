@@ -9,6 +9,7 @@ export type MarkdownFile = {
   url: string
   content: string
   title: string
+  description: string
   date: string
   tags: string[]
 }
@@ -50,6 +51,7 @@ export function gatherMarkdownMetadata(filePath: string) {
     url: url,
     content: content,
     title: data.title,
+    description: data.description,
     date: data.date,
     tags: data.tags,
   }

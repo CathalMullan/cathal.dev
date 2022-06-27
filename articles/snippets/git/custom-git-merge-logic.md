@@ -1,5 +1,6 @@
 ---
 title: 'Custom Git Merge Logic'
+description: "Introduction to 'merge drivers' in Git"
 date: '2022-07-01'
 tags: ['git']
 ---

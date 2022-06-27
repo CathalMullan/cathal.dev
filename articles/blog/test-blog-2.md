@@ -1,5 +1,6 @@
 ---
 title: 'Test Blog #2'
+description: 'Blog for testing purposes. Python edition.'
 date: '2022-07-01'
 tags: ['test', 'python']
 ---

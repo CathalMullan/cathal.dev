@@ -19,7 +19,7 @@ My website.
 
 Ordered by priority.
 
-- Twitter/Discord share cards (\_document.tsx links)
+- CSP
 - Related Posts
 - Notifications
 - RSS

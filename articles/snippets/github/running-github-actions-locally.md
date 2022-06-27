@@ -1,5 +1,6 @@
 ---
 title: 'Running GitHub Actions Locally'
+description: 'Using Act to run certain GitHub Actions locally, using Docker'
 date: '2022-07-01'
 tags: ['github', 'github_actions']
 ---

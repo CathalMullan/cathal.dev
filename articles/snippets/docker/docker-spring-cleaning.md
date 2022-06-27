@@ -1,5 +1,6 @@
 ---
 title: 'Docker Spring Cleaning'
+description: "'Reset' your Docker environment."
 date: '2022-07-01'
 tags: ['docker']
 ---
