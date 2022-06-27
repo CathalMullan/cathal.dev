@@ -3,6 +3,7 @@ import SearchIcon from 'public/svg/SearchIcon.svg'
 import Fuse from 'fuse.js'
 import { MarkdownFile } from 'lib/markdown'
 import RenderedText from './RenderedText'
+import MarkdownList from './MarkdownList'
 
 interface Props {
   markdownPages: MarkdownFile[]
@@ -40,15 +41,7 @@ export default function SearchBar({ markdownPages }: Props) {
         />
       </div>
 
-      {results.length > 0 && (
-        <ul>
-          {results.map(({ id, url, title }: MarkdownFile) => (
-            <li key={id}>
-              <a href={`/${url}`}>{title}</a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <MarkdownList title="Results" markdownFiles={results} />
     </RenderedText>
   )
 }

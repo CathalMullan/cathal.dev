@@ -1,9 +1,8 @@
 import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
-import { MarkdownFile } from 'lib/markdown'
-import { fetchTagsStaticPaths, fetchTagsStaticProps } from 'lib/tags'
+import { fetchMarkdownFiles, fetchMarkdownTags, MarkdownFile } from 'lib/markdown'
 import PageLayout from 'components/PageLayout'
-import Link from 'next/link'
+import MarkdownList from 'components/MarkdownList'
 
 interface Props {
   tag: string
@@ -16,41 +15,18 @@ export default function TagPage({ tag, blogPosts, snippets }: Props) {
     <PageLayout title={tag}>
       <h1>{tag} content</h1>
 
-      {blogPosts.length > 0 && (
-        <section>
-          <h2>Blog Posts:</h2>
-          <ul>
-            {blogPosts.map(({ id, url, title }: MarkdownFile) => (
-              <li key={id}>
-                <Link href={`/${url}`}>{title}</Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {snippets.length > 0 && (
-        <section>
-          <h2>Snippets:</h2>
-          <ul>
-            {snippets.map(({ id, url, title }: MarkdownFile) => (
-              <li key={id}>
-                <Link href={`/${url}`}>{title}</Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <MarkdownList title="Blog Posts" markdownFiles={blogPosts} />
+      <MarkdownList title="Snippets" markdownFiles={snippets} />
     </PageLayout>
   )
 }
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const tag = params ? `${params.tag}` : ''
-  const pages = fetchTagsStaticProps(tag)
 
-  const blogPosts = pages.filter((page) => page.url.includes('blog'))
-  const snippets = pages.filter((page) => page.url.includes('snippets'))
+  const markdownFiles = fetchMarkdownFiles('.')
+  const blogPosts = markdownFiles.filter((file) => file.url.includes('blog') && file.tags.includes(tag))
+  const snippets = markdownFiles.filter((file) => file.url.includes('snippets') && file.tags.includes(tag))
 
   return {
     props: {
@@ -62,8 +38,15 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  const markdownTags = fetchMarkdownTags()
+
+  const paths: { params: { tag: string } }[] = []
+  markdownTags.map((tag) => {
+    paths.push({ params: { tag } })
+  })
+
   return {
-    paths: fetchTagsStaticPaths(),
+    paths,
     fallback: false,
   }
 }

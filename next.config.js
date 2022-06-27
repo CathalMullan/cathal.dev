@@ -1,4 +1,4 @@
-const GIT_HASH = process.env.GITHUB_SHA || 'Unknown Git Hash'
+const GIT_HASH = process.env.GITHUB_SHA || 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

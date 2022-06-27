@@ -2,8 +2,6 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import MarkdownTags from './MarkdownTags'
-import MarkdownDate from './MarkdownDate'
 
 // Strange error when importing this theme, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -28,41 +26,29 @@ SyntaxHighlighter.registerLanguage('nix', nix)
 
 interface Props {
   content: string
-  date: string
-  tags: string[]
 }
 
-export default function Markdown({ content, date, tags }: Props) {
+export default function RenderedMarkdown({ content }: Props) {
   return (
-    <>
-      <div className="py-2 pb-4">
-        <MarkdownDate date={date} />
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
+      components={{
+        code({ inline, className, children, ...props }) {
+          const match = /language-(\w+)/.exec(className || '')
 
-        <div className="space-x-4 py-2">
-          <MarkdownTags tags={tags} />
-        </div>
-      </div>
+          // Fallback to using 'bash' highlighting, so we still maintain a consistant style (over using 'code' as suggested)
+          const language = !inline && match ? match[1] : 'bash'
 
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
-        components={{
-          code({ inline, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '')
-
-            // Fallback to using 'bash' highlighting, so we still maintain a consistant style (over using 'code' as suggested)
-            const language = !inline && match ? match[1] : 'bash'
-
-            return (
-              <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true} {...props}>
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-            )
-          },
-        }}
-      >
-        {content}
-      </ReactMarkdown>
-    </>
+          return (
+            <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true} {...props}>
+              {String(children).replace(/\n$/, '')}
+            </SyntaxHighlighter>
+          )
+        },
+      }}
+    >
+      {content}
+    </ReactMarkdown>
   )
 }

@@ -16,9 +16,12 @@ export default function SearchPage({ markdownPages }: Props) {
 }
 
 export async function getStaticProps() {
+  const blogPosts = fetchMarkdownFiles('blog')
+  const snippetPosts = fetchMarkdownFiles('snippets')
+
   return {
     props: {
-      markdownPages: fetchMarkdownFiles('.'),
+      markdownPages: blogPosts.concat(snippetPosts),
     },
   }
 }
