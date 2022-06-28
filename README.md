@@ -17,16 +17,9 @@ My website.
 
 ## TODO
 
+
 Ordered by priority.
 
-- Related Posts
-- Notifications
-- RSS
-
-Long Term:
-
-- CSP
-- Remove "unneeded" dependencies (next-sitemap, next-themes)
-- Custom Prism syntax theme (Tokyo Night inspired)
 - Table of Contents
-- Mermaid Diagrams
+- Custom Prism syntax theme (Tokyo Night inspired)
+- Add actual content, remove test blogs and 'work in progress' warning.
