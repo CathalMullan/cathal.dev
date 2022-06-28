@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import LightningBolt from 'public/svg/LightningBolt.svg'
-import ThemeToggle from './ThemeToggle'
-import SearchLink from './links/SearchLink'
+import Link from "next/link"
+import LightningBolt from "public/svg/LightningBolt.svg"
+import ThemeToggle from "./ThemeToggle"
+import SearchLink from "./links/SearchLink"
 
 export default function Header() {
   return (

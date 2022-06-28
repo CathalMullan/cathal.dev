@@ -1,4 +1,4 @@
-const GIT_HASH = process.env.GITHUB_SHA || 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+const GIT_HASH = process.env.GITHUB_SHA || "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,7 +14,7 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: ["@svgr/webpack"],
     })
 
     return config

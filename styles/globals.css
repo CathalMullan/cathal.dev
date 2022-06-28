@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'JetBrains Mono NL';
+  font-family: "JetBrains Mono NL";
   font-display: block;
-  src: url('/fonts/JetBrainsMonoNL.ttf') format('truetype');
+  src: url("/fonts/JetBrainsMonoNL.ttf") format("truetype");
 }

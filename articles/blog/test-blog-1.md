@@ -1,8 +1,8 @@
 ---
-title: 'Test Blog #1'
-description: 'Blog for testing purposes. Rust edition.'
-date: '2022-07-01'
-tags: ['test', 'rust']
+title: "Test Blog #1"
+description: "Blog for testing purposes. Rust edition."
+date: "2022-07-01"
+tags: ["test", "rust"]
 ---
 
 # Test Blog #1

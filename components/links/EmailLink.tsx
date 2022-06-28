@@ -1,4 +1,4 @@
-import MailIcon from 'public/svg/MailIcon.svg'
+import MailIcon from "public/svg/MailIcon.svg"
 
 export default function EmailLink() {
   return (

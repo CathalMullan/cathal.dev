@@ -1,8 +1,8 @@
 ---
-title: 'Cleanup GitHub Workflows'
-description: 'Wipe all workflow runs in a repository using the GitHub CLI'
-date: '2022-07-01'
-tags: ['github', 'github_actions']
+title: "Cleanup GitHub Workflows"
+description: "Wipe all workflow runs in a repository using the GitHub CLI"
+date: "2022-07-01"
+tags: ["github", "github_actions"]
 ---
 
 # Cleanup GitHub Workflows

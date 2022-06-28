@@ -1,8 +1,8 @@
 ---
-title: 'Fix Nix Store Path'
-description: 'How to fix the Nix Store path'
-date: '2022-07-01'
-tags: ['nix']
+title: "Fix Nix Store Path"
+description: "How to fix the Nix Store path"
+date: "2022-07-01"
+tags: ["nix"]
 ---
 
 # Fix Nix Store Path

@@ -1,8 +1,8 @@
-import React from 'react'
-import { GetStaticPaths, GetStaticPropsContext } from 'next'
-import { fetchMarkdownFile, fetchMarkdownFiles, MarkdownFile } from 'lib/markdown'
-import MarkdownPage from 'components/MarkdownPage'
-import PageLayout from 'components/PageLayout'
+import React from "react"
+import { GetStaticPaths, GetStaticPropsContext } from "next"
+import { fetchMarkdownFile, fetchMarkdownFiles, MarkdownFile } from "lib/markdown"
+import MarkdownPage from "components/MarkdownPage"
+import PageLayout from "components/PageLayout"
 
 export default function BlogPage({ blog }: { blog: MarkdownFile }) {
   return (
@@ -13,14 +13,14 @@ export default function BlogPage({ blog }: { blog: MarkdownFile }) {
 }
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
-  const id = params ? `${params.id}` : ''
+  const id = params ? `${params.id}` : ""
   const blog = fetchMarkdownFile(`blog/${id}.md`)
 
   return { props: { blog } }
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const blogFiles = fetchMarkdownFiles('blog')
+  const blogFiles = fetchMarkdownFiles("blog")
 
   const paths: { params: { id: string } }[] = []
   blogFiles.map(({ id }) => {

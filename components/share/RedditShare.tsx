@@ -1,5 +1,5 @@
-import React from 'react'
-import RedditIcon from 'public/svg/RedditIcon.svg'
+import React from "react"
+import RedditIcon from "public/svg/RedditIcon.svg"
 
 interface Props {
   url: string

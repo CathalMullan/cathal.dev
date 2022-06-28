@@ -1,5 +1,5 @@
-import React from 'react'
-import TwitterIcon from 'public/svg/TwitterIcon.svg'
+import React from "react"
+import TwitterIcon from "public/svg/TwitterIcon.svg"
 
 interface Props {
   url: string
@@ -10,7 +10,7 @@ interface Props {
 export default function TwitterShare({ url, title, tags }: Props) {
   const encodedTitle = encodeURIComponent(title)
   const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`)
-  const encodedHashtags = encodeURIComponent(tags.join(','))
+  const encodedHashtags = encodeURIComponent(tags.join(","))
 
   return (
     <a

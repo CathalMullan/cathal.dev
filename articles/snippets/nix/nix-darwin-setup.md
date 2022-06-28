@@ -1,8 +1,8 @@
 ---
-title: 'Nix Darwin Setup'
-description: 'How to setup Nix Darwin'
-date: '2022-07-01'
-tags: ['nix', 'nix_darwin']
+title: "Nix Darwin Setup"
+description: "How to setup Nix Darwin"
+date: "2022-07-01"
+tags: ["nix", "nix_darwin"]
 ---
 
 # Nix Darwin Setup

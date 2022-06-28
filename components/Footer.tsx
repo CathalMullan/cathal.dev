@@ -1,7 +1,7 @@
-import CommitLink from './links/CommitLink'
-import GitHubLink from 'components/links/GitHubLink'
-import LinkedInLink from 'components/links/LinkedInLink'
-import EmailLink from './links/EmailLink'
+import CommitLink from "./links/CommitLink"
+import GitHubLink from "components/links/GitHubLink"
+import LinkedInLink from "components/links/LinkedInLink"
+import EmailLink from "./links/EmailLink"
 
 export default function Footer() {
   return (

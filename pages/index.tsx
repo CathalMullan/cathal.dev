@@ -1,7 +1,7 @@
-import { MarkdownFile, fetchMarkdownFiles, fetchMarkdownFile } from 'lib/markdown'
-import PageLayout from 'components/PageLayout'
-import RenderedMarkdown from 'components/RenderedMarkdown'
-import MarkdownCards from 'components/MarkdownCards'
+import { MarkdownFile, fetchMarkdownFiles, fetchMarkdownFile } from "lib/markdown"
+import PageLayout from "components/PageLayout"
+import RenderedMarkdown from "components/RenderedMarkdown"
+import MarkdownCards from "components/MarkdownCards"
 
 interface Props {
   aboutMe: MarkdownFile
@@ -22,13 +22,13 @@ export default function Index({ aboutMe, blogPosts, snippets }: Props) {
 }
 
 export async function getStaticProps() {
-  const aboutMe = fetchMarkdownFile('about-me.md')
+  const aboutMe = fetchMarkdownFile("about-me.md")
 
-  const blogPosts = fetchMarkdownFiles('blog')
+  const blogPosts = fetchMarkdownFiles("blog")
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(0, 5)
 
-  const snippets = fetchMarkdownFiles('snippets')
+  const snippets = fetchMarkdownFiles("snippets")
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(0, 5)
 

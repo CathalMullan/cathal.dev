@@ -1,8 +1,8 @@
 ---
-title: 'Ignoring Git Files'
+title: "Ignoring Git Files"
 description: "How to use '.gitignore' to ignore files from Git"
-date: '2022-07-01'
-tags: ['git']
+date: "2022-07-01"
+tags: ["git"]
 ---
 
 # Ignoring Git Files

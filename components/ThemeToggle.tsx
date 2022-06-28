@@ -1,7 +1,7 @@
-import { useTheme } from 'next-themes'
-import MoonIcon from 'public/svg/MoonIcon.svg'
-import SunIcon from 'public/svg/SunIcon.svg'
-import { useEffect, useState } from 'react'
+import { useTheme } from "next-themes"
+import MoonIcon from "public/svg/MoonIcon.svg"
+import SunIcon from "public/svg/SunIcon.svg"
+import { useEffect, useState } from "react"
 
 // https://github.com/pacocoursey/next-themes#avoid-hydration-mismatch
 export default function ThemeToggle() {
@@ -17,11 +17,11 @@ export default function ThemeToggle() {
   }
 
   return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} aria-label="Toggle theme">
-      {theme === 'light' ? (
-        <MoonIcon className={'h-6 w-6 fill-black dark:fill-white'} />
+    <button onClick={() => setTheme(theme === "light" ? "dark" : "light")} aria-label="Toggle theme">
+      {theme === "light" ? (
+        <MoonIcon className={"h-6 w-6 fill-black dark:fill-white"} />
       ) : (
-        <SunIcon className={'h-6 w-6 fill-black dark:fill-white'} />
+        <SunIcon className={"h-6 w-6 fill-black dark:fill-white"} />
       )}
     </button>
   )

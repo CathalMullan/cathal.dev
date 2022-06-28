@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head"
 
 interface Props {
   url: string
@@ -11,9 +11,9 @@ export default function SEO({ url, title, description, tags }: Props) {
   return (
     <Head>
       <meta name="description" content={description} />
-      <meta name="keywords" content={tags.join(', ')} />
+      <meta name="keywords" content={tags.join(", ")} />
 
-      <meta property="og:site_name" content={'cathal.dev'} />
+      <meta property="og:site_name" content={"cathal.dev"} />
       <meta property="og:url" content={`https://cathal.dev/${url}`} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

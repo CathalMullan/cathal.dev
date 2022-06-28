@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import SearchIcon from 'public/svg/SearchIcon.svg'
-import Fuse from 'fuse.js'
-import { MarkdownFile } from 'lib/markdown'
-import RenderedText from './RenderedText'
-import MarkdownCards from './MarkdownCards'
+import React, { useState } from "react"
+import SearchIcon from "public/svg/SearchIcon.svg"
+import Fuse from "fuse.js"
+import { MarkdownFile } from "lib/markdown"
+import RenderedText from "./RenderedText"
+import MarkdownCards from "./MarkdownCards"
 
 interface Props {
   markdownPages: MarkdownFile[]
 }
 
 export default function SearchBar({ markdownPages }: Props) {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("")
   const [results, setResults] = useState<MarkdownFile[]>([])
 
   const searchIndex = new Fuse(markdownPages, {
     threshold: 0.3,
-    keys: ['title', 'content', 'tags'],
+    keys: ["title", "content", "tags"],
     ignoreLocation: true,
   })
 

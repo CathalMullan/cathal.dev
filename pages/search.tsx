@@ -1,7 +1,7 @@
-import PageLayout from 'components/PageLayout'
-import SearchBar from 'components/SearchBar'
-import { fetchMarkdownFiles, MarkdownFile } from 'lib/markdown'
-import React from 'react'
+import PageLayout from "components/PageLayout"
+import SearchBar from "components/SearchBar"
+import { fetchMarkdownFiles, MarkdownFile } from "lib/markdown"
+import React from "react"
 
 interface Props {
   markdownPages: MarkdownFile[]
@@ -16,8 +16,8 @@ export default function SearchPage({ markdownPages }: Props) {
 }
 
 export async function getStaticProps() {
-  const blogPosts = fetchMarkdownFiles('blog')
-  const snippetPosts = fetchMarkdownFiles('snippets')
+  const blogPosts = fetchMarkdownFiles("blog")
+  const snippetPosts = fetchMarkdownFiles("snippets")
 
   return {
     props: {

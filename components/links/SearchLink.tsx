@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import SearchIcon from 'public/svg/SearchIcon.svg'
+import Link from "next/link"
+import SearchIcon from "public/svg/SearchIcon.svg"
 
 export default function LinkedInLink() {
   return (

@@ -1,11 +1,11 @@
-import React from 'react'
-import RenderedMarkdown from './RenderedMarkdown'
-import TwitterShare from './share/TwitterShare'
-import RedditShare from './share/RedditShare'
-import HackerNewsShare from './share/HackerNewsShare'
-import SEO from './SEO'
-import MarkdownTags from './MarkdownTags'
-import MarkdownDate from './MarkdownDate'
+import React from "react"
+import RenderedMarkdown from "./RenderedMarkdown"
+import TwitterShare from "./share/TwitterShare"
+import RedditShare from "./share/RedditShare"
+import HackerNewsShare from "./share/HackerNewsShare"
+import SEO from "./SEO"
+import MarkdownTags from "./MarkdownTags"
+import MarkdownDate from "./MarkdownDate"
 
 interface Props {
   url: string

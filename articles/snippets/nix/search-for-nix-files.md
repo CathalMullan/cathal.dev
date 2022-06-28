@@ -1,8 +1,8 @@
 ---
-title: 'Search for Nix Files'
-description: 'Find which Nix package contains a given file'
-date: '2022-07-01'
-tags: ['nix']
+title: "Search for Nix Files"
+description: "Find which Nix package contains a given file"
+date: "2022-07-01"
+tags: ["nix"]
 ---
 
 # Search for Nix Files

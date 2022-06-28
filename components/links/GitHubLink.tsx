@@ -1,4 +1,4 @@
-import GitHubIcon from 'public/svg/GitHubIcon.svg'
+import GitHubIcon from "public/svg/GitHubIcon.svg"
 
 export default function GitHubLink() {
   return (

@@ -1,5 +1,5 @@
-import React from 'react'
-import HackerNewsIcon from 'public/svg/HackerNewsIcon.svg'
+import React from "react"
+import HackerNewsIcon from "public/svg/HackerNewsIcon.svg"
 
 interface Props {
   url: string
