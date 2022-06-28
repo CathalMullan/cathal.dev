@@ -16,7 +16,7 @@ export default function MarkdownCards({ text, markdownFiles }: Props) {
           <h2>{text}:</h2>
 
           {markdownFiles.map(({ id, url, title, description, tags, date }: MarkdownFile) => (
-            <div key={id} className="block rounded-lg pb-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+            <div key={id} className="block rounded-lg pb-4 hover:bg-gray-100 dark:hover:bg-gray-700">
               <div className="px-6 pt-4">
                 <a href={`/${url}`} className="mb-2 text-xl font-bold">
                   {title}
@@ -24,7 +24,7 @@ export default function MarkdownCards({ text, markdownFiles }: Props) {
 
                 <MarkdownDate date={date} />
                 <MarkdownTags tags={tags} />
-                <p>{description}</p>
+                <div>{description}</div>
               </div>
             </div>
           ))}

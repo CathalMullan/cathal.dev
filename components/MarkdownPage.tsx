@@ -29,7 +29,7 @@ export default function MarkdownPage({ url, title, description, content, date, t
       <RenderedMarkdown content={content} />
 
       <section>
-        <h3 className="flex justify-center">Share Article</h3>
+        <p className="flex justify-center text-lg">Share Article</p>
 
         <div className="flex items-center justify-center space-x-10">
           <TwitterShare url={url} title={title} tags={tags} />
