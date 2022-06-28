@@ -19,5 +19,4 @@ My website.
 
 Ordered by priority.
 
-- Custom Prism syntax theme (Tokyo Night inspired)
 - Add actual content, remove test blogs and 'work in progress' warning.
