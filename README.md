@@ -17,9 +17,7 @@ My website.
 
 ## TODO
 
-
 Ordered by priority.
 
-- Table of Contents
 - Custom Prism syntax theme (Tokyo Night inspired)
 - Add actual content, remove test blogs and 'work in progress' warning.

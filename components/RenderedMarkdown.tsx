@@ -2,6 +2,7 @@ import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
+import rehypeToc from '@jsdevtools/rehype-toc'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 
@@ -34,7 +35,11 @@ export default function RenderedMarkdown({ content }: Props) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'prepend' }]]}
+      rehypePlugins={[
+        rehypeSlug,
+        [rehypeToc, { headings: ['h2', 'h3', 'h4', 'h5', 'h6'], cssClasses: { toc: 'pb-8' } }],
+        [rehypeAutolinkHeadings, { behavior: 'prepend' }],
+      ]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{
         code({ inline, className, children, ...props }) {
