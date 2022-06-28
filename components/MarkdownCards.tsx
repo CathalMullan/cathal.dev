@@ -1,5 +1,6 @@
 import { MarkdownFile } from 'lib/markdown'
 import React from 'react'
+import MarkdownDate from './MarkdownDate'
 import MarkdownTags from './MarkdownTags'
 
 interface Props {
@@ -21,7 +22,7 @@ export default function MarkdownCards({ text, markdownFiles }: Props) {
                   {title}
                 </a>
 
-                <div className="text-sm">{date}</div>
+                <MarkdownDate date={date} />
                 <MarkdownTags tags={tags} />
                 <p>{description}</p>
               </div>

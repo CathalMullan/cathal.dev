@@ -5,6 +5,7 @@ import RedditShare from './share/RedditShare'
 import HackerNewsShare from './share/HackerNewsShare'
 import SEO from './SEO'
 import MarkdownTags from './MarkdownTags'
+import MarkdownDate from './MarkdownDate'
 
 interface Props {
   url: string
@@ -21,8 +22,7 @@ export default function MarkdownPage({ url, title, description, content, date, t
       <SEO url={url} title={title} description={description} tags={tags} />
 
       <div className="py-2 pb-4">
-        <div>{date}</div>
-
+        <MarkdownDate date={date} />
         <MarkdownTags tags={tags} />
       </div>
 
