@@ -4,6 +4,7 @@ import TwitterShare from './share/TwitterShare'
 import RedditShare from './share/RedditShare'
 import HackerNewsShare from './share/HackerNewsShare'
 import SEO from './SEO'
+import MarkdownTags from './MarkdownTags'
 
 interface Props {
   url: string
@@ -22,13 +23,7 @@ export default function MarkdownPage({ url, title, description, content, date, t
       <div className="py-2 pb-4">
         <div>{date}</div>
 
-        <div className="space-x-4 py-2">
-          {tags.map((tag: string) => (
-            <a key={tag} href={`/tags/${tag}`}>
-              {tag}
-            </a>
-          ))}
-        </div>
+        <MarkdownTags tags={tags} />
       </div>
 
       <RenderedMarkdown content={content} />
