@@ -2,7 +2,7 @@ import React from 'react'
 import { GetStaticPaths, GetStaticPropsContext } from 'next'
 import { fetchMarkdownFiles, fetchMarkdownTags, MarkdownFile } from 'lib/markdown'
 import PageLayout from 'components/PageLayout'
-import MarkdownList from 'components/MarkdownList'
+import MarkdownCards from 'components/MarkdownCards'
 
 interface Props {
   tag: string
@@ -15,8 +15,8 @@ export default function TagPage({ tag, blogPosts, snippets }: Props) {
     <PageLayout title={tag}>
       <h1>{tag} content</h1>
 
-      <MarkdownList title="Blog Posts" markdownFiles={blogPosts} />
-      <MarkdownList title="Snippets" markdownFiles={snippets} />
+      <MarkdownCards text="Blog Posts" markdownFiles={blogPosts} />
+      <MarkdownCards text="Snippets" markdownFiles={snippets} />
     </PageLayout>
   )
 }

@@ -3,7 +3,7 @@ import SearchIcon from 'public/svg/SearchIcon.svg'
 import Fuse from 'fuse.js'
 import { MarkdownFile } from 'lib/markdown'
 import RenderedText from './RenderedText'
-import MarkdownList from './MarkdownList'
+import MarkdownCards from './MarkdownCards'
 
 interface Props {
   markdownPages: MarkdownFile[]
@@ -41,7 +41,7 @@ export default function SearchBar({ markdownPages }: Props) {
         />
       </div>
 
-      <MarkdownList title="Results" markdownFiles={results} />
+      <MarkdownCards text="Results" markdownFiles={results} />
     </RenderedText>
   )
 }

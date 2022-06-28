@@ -19,13 +19,14 @@ My website.
 
 Ordered by priority.
 
-- Pretty MarkdownFile Showcase (see https://blog.cloudflare.com)
-- CSP
 - Related Posts
 - Notifications
 - RSS
+
+Long Term:
+
+- CSP
 - Remove "unneeded" dependencies (next-sitemap, next-themes)
-- Filter by year (`/year/{id}`)
 - Custom Prism syntax theme (Tokyo Night inspired)
 - Table of Contents
 - Mermaid Diagrams

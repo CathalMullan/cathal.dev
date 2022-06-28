@@ -34,7 +34,7 @@ export default function RenderedMarkdown({ content }: Props) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]}
+      rehypePlugins={[rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'prepend' }]]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{
         code({ inline, className, children, ...props }) {

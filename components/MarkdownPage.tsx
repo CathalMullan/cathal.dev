@@ -1,6 +1,4 @@
 import React from 'react'
-import MarkdownTags from './MarkdownTags'
-import MarkdownDate from './MarkdownDate'
 import RenderedMarkdown from './RenderedMarkdown'
 import TwitterShare from './share/TwitterShare'
 import RedditShare from './share/RedditShare'
@@ -22,16 +20,20 @@ export default function MarkdownPage({ url, title, description, content, date, t
       <SEO url={url} title={title} description={description} tags={tags} />
 
       <div className="py-2 pb-4">
-        <MarkdownDate date={date} />
+        <div>{date}</div>
 
         <div className="space-x-4 py-2">
-          <MarkdownTags tags={tags} />
+          {tags.map((tag: string) => (
+            <a key={tag} href={`/tags/${tag}`}>
+              {tag}
+            </a>
+          ))}
         </div>
       </div>
 
       <RenderedMarkdown content={content} />
 
-      <section className="border-gray-2 border-t">
+      <section>
         <h3 className="flex justify-center">Share Article</h3>
 
         <div className="flex items-center justify-center space-x-10">

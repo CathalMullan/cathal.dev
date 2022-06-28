@@ -1,8 +1,7 @@
-import { MarkdownFile, fetchMarkdownFiles, fetchMarkdownFile, fetchMarkdownTags } from 'lib/markdown'
+import { MarkdownFile, fetchMarkdownFiles, fetchMarkdownFile } from 'lib/markdown'
 import PageLayout from 'components/PageLayout'
 import RenderedMarkdown from 'components/RenderedMarkdown'
-import MarkdownList from 'components/MarkdownList'
-import TagList from 'components/TagList'
+import MarkdownCards from 'components/MarkdownCards'
 
 interface Props {
   aboutMe: MarkdownFile
@@ -11,31 +10,33 @@ interface Props {
   tags: string[]
 }
 
-export default function Index({ aboutMe, blogPosts, snippets, tags }: Props) {
+export default function Index({ aboutMe, blogPosts, snippets }: Props) {
   return (
     <PageLayout title="Cathal Mullan's Personal Site">
       <RenderedMarkdown content={aboutMe.content} />
 
-      <MarkdownList title="Blog Posts" markdownFiles={blogPosts} />
-      <MarkdownList title="Snippets" markdownFiles={snippets} />
-
-      <TagList title="Tags" tags={tags} />
+      <MarkdownCards text="Latest Blog Posts" markdownFiles={blogPosts} />
+      <MarkdownCards text="Latest Snippets" markdownFiles={snippets} />
     </PageLayout>
   )
 }
 
 export async function getStaticProps() {
   const aboutMe = fetchMarkdownFile('about-me.md')
+
   const blogPosts = fetchMarkdownFiles('blog')
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, 5)
+
   const snippets = fetchMarkdownFiles('snippets')
-  const tags = fetchMarkdownTags()
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, 5)
 
   return {
     props: {
       aboutMe,
       blogPosts,
       snippets,
-      tags,
     },
   }
 }
