@@ -5,6 +5,7 @@ import rehypeSlug from "rehype-slug"
 import rehypeToc from "@jsdevtools/rehype-toc"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter"
+import { CopyCode } from "./CopyCode"
 
 // Strange error when importing this theme, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -42,16 +43,18 @@ export default function RenderedMarkdown({ content }: Props) {
       ]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{
-        code({ inline, className, children, ...props }) {
+        code({ className, children }) {
           const match = /language-(\w+)/.exec(className || "")
 
           // Fallback to using 'bash' highlighting, so we still maintain a consistant style (over using 'code' as suggested)
-          const language = !inline && match ? match[1] : "bash"
+          const language = match ? match[1] : "bash"
 
           return (
-            <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true} {...props}>
-              {String(children).replace(/\n$/, "")}
-            </SyntaxHighlighter>
+            <CopyCode>
+              <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true}>
+                {String(children).replace(/\n$/, "")}
+              </SyntaxHighlighter>
+            </CopyCode>
           )
         },
       }}

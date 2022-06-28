@@ -3,6 +3,7 @@ const GIT_HASH = process.env.GITHUB_SHA || "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
 
   env: {
     GIT_HASH,
