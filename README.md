@@ -20,3 +20,6 @@ My website.
 Ordered by priority.
 
 - Add actual content, remove test blogs and 'work in progress' warning.
+
+Blogs:
+  - git-blame-ignore-revs

@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build && next-sitemap && next export",
     "sync": "./scripts/sync.sh",
+    "purge": "./scripts/purge.sh",
     "start": "next start",
     "lint": "next lint",
     "fmt": "pnpm prettier --write .",

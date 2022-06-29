@@ -42,6 +42,8 @@
 
             # Utility
             git
+            jq
+            curl
           ];
         };
       });

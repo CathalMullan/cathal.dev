@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euxo pipefail
+set -euo pipefail
 
 #
 # S3 can't handle requests to `/about` being routed to `/about.html`.
