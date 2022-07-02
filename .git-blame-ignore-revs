@@ -10,3 +10,6 @@
 
 # Switch to double quotes in prettier
 e0725a8fef9bd4a2df09859e83323fe5f592b277
+
+# Reconfigure linters, using airbnb config
+8477230be1c414c2ed52cb53eec8e3f66c62f685
