@@ -25,11 +25,11 @@ export async function getStaticProps() {
 
   const blogPosts = fetchMarkdownFiles("blog")
     .sort((a, b) => a.date.localeCompare(b.date))
-    .slice(0, 5);
+    .slice(0, 6);
 
   const snippets = fetchMarkdownFiles("snippets")
     .sort((a, b) => a.date.localeCompare(b.date))
-    .slice(0, 5);
+    .slice(0, 6);
 
   return {
     props: {

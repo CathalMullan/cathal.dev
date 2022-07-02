@@ -1,3 +1,5 @@
+import { MarkdownFile } from "lib/markdown";
+import { MarkdownCards } from "./MarkdownCards";
 import { MarkdownDate } from "./MarkdownDate";
 import { MarkdownTags } from "./MarkdownTags";
 import { RenderedMarkdown } from "./RenderedMarkdown";
@@ -13,9 +15,10 @@ interface Props {
   content: string;
   date: string;
   tags: string[];
+  relatedPosts: MarkdownFile[];
 }
 
-export function MarkdownPage({ url, title, description, content, date, tags }: Props) {
+export function MarkdownPage({ url, title, description, content, date, tags, relatedPosts }: Props) {
   return (
     <>
       <SEO url={url} title={title} description={description} tags={tags} />
@@ -27,6 +30,8 @@ export function MarkdownPage({ url, title, description, content, date, tags }: P
 
       <RenderedMarkdown content={content} />
 
+      <hr className="dashed" />
+
       <section>
         <p className="flex justify-center text-lg">Share Article</p>
 
@@ -36,6 +41,8 @@ export function MarkdownPage({ url, title, description, content, date, tags }: P
           <HackerNewsShare url={url} title={title} />
         </div>
       </section>
+
+      <MarkdownCards text="Related Posts" markdownFiles={relatedPosts} />
     </>
   );
 }

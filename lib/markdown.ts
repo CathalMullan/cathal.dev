@@ -24,14 +24,14 @@ export function gatherMarkdownMetadata(filePath: string) {
   const url = relativePath.replace(/[.]md$/, "");
 
   const relativeFolder = path.dirname(relativePath);
-  const parentFolder = path.basename(relativeFolder);
+  const folder = path.basename(relativeFolder);
 
   const article = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(article);
 
   return {
     id,
-    folder: parentFolder,
+    folder,
     url,
     content,
     title: data.title,
@@ -44,12 +44,11 @@ export function gatherMarkdownMetadata(filePath: string) {
 export function fetchMarkdownFiles(directory: string): MarkdownFile[] {
   const markdownDirectory = path.join(articlesDirectory, directory);
   const markdownFileNames = glob.sync(`${markdownDirectory}/**/*.md`);
+  return markdownFileNames.map((filePath) => gatherMarkdownMetadata(filePath));
+}
 
-  const markdownFiles = markdownFileNames.map((filePath) => {
-    return gatherMarkdownMetadata(filePath);
-  });
-
-  return markdownFiles;
+export function fetchMarkdownFilesByTags(tags: string[]): MarkdownFile[] {
+  return fetchMarkdownFiles(".").filter((file) => file.tags.some((file_tag) => tags.includes(file_tag)));
 }
 
 export function fetchMarkdownFile(file: string): MarkdownFile {
