@@ -19,7 +19,7 @@ export default function PageLayout({ title, children }: Props) {
       <main className="flex min-h-screen flex-col bg-white dark:bg-slate-800">
         <Header />
 
-        <div className="flex-grow pt-5 pb-5 pl-5 pr-5">
+        <div className="flex-grow p-5">
           <RenderedText>{children}</RenderedText>
         </div>
 
