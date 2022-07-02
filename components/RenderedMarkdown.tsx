@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeSlug from "rehype-slug"
 import rehypeToc from "@jsdevtools/rehype-toc"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter"
 import { CopyCode } from "./CopyCode"
 
@@ -53,7 +52,6 @@ export default function RenderedMarkdown({ content }: Props) {
             cssClasses: { list: "list-disc empty:pb-0 first:pb-8" },
           },
         ],
-        [rehypeAutolinkHeadings, { behavior: "prepend" }],
       ]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{
@@ -69,7 +67,7 @@ export default function RenderedMarkdown({ content }: Props) {
           return (
             <CopyCode>
               <SyntaxHighlighter
-                style={theme === "dark" ? coldarkDark : coldarkCold}
+                style={theme === "light" ? coldarkCold : coldarkDark}
                 language={language}
                 showLineNumbers={true}
               >
