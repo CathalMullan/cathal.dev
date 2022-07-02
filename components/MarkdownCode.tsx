@@ -1,4 +1,5 @@
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // Register syntax highlighted languages
 // The default of shipping all languages results in a 2MB bundle, which I'd rather avoid
@@ -33,6 +34,15 @@ interface Props {
 // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
 export function MarkdownCode({ inline, className, children }: Props) {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   if (inline) {
     return <code>{children}</code>;
