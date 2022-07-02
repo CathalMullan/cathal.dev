@@ -38,7 +38,13 @@ export default function RenderedMarkdown({ content }: Props) {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[
         rehypeSlug,
-        [rehypeToc, { headings: ["h2", "h3", "h4", "h5", "h6"], cssClasses: { listItem: "last:pb-8" } }],
+        [
+          rehypeToc,
+          {
+            headings: ["h2", "h3", "h4", "h5", "h6"],
+            cssClasses: { list: "list-disc", listItem: "last:pb-2" },
+          },
+        ],
         [rehypeAutolinkHeadings, { behavior: "prepend" }],
       ]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight

@@ -1,5 +1,6 @@
 import React, { ReactNode, useRef, useState } from "react"
 import Clipboard from "public/svg/Clipboard.svg"
+import ClipboardCopied from "public/svg/ClipboardCopied.svg"
 
 interface Props {
   children: ReactNode
@@ -7,22 +8,29 @@ interface Props {
 
 export const CopyCode = ({ children }: Props) => {
   const codeDiv = useRef<HTMLDivElement>(null)
+
   const [copied, setCopied] = useState(false)
+  const [visible, setVisible] = useState(false)
 
   const onClick = () => {
+    if (!codeDiv.current) {
+      return
+    }
+
     setCopied(true)
 
-    if (codeDiv.current) {
-      // This is awful, but hey, it works.
-      const codeElements = codeDiv.current.children[1].children[0].children
-
-      const codeText = Array.from(codeElements)
-        .filter((element) => !element.classList.contains("linenumber"))
-        .map((element) => element.textContent)
-        .join("")
-
-      navigator.clipboard.writeText(codeText)
+    // This is awful, but hey, it works.
+    const textContent = codeDiv.current.children[1].children[0].textContent
+    if (!textContent) {
+      return
     }
+
+    const codeText = textContent
+      .split("\n")
+      .map((element, index) => element.substring((index + 1).toString().length))
+      .join("\n")
+
+    navigator.clipboard.writeText(codeText)
 
     setTimeout(() => {
       setCopied(false)
@@ -30,14 +38,18 @@ export const CopyCode = ({ children }: Props) => {
   }
 
   return (
-    <div className="relative" ref={codeDiv}>
-      <button
-        className="absolute top-1 right-1 m-1 h-6 w-6"
-        aria-label="Copy code"
-        type="button"
-        onClick={onClick}
-      >
-        <Clipboard className={copied ? "animate-pulse" : ""} />
+    <div
+      className="relative"
+      ref={codeDiv}
+      onMouseEnter={() => setVisible(true)}
+      onMouseLeave={() => setVisible(false)}
+    >
+      <button className="absolute right-1 m-2 h-6 w-6" aria-label="Copy code" type="button" onClick={onClick}>
+        {copied ? (
+          <ClipboardCopied className="bg-[#111b27] fill-[#111b27]" />
+        ) : (
+          <Clipboard className={visible ? "bg-[#111b27] fill-[#111b27]" : "hidden"} />
+        )}
       </button>
 
       {children}

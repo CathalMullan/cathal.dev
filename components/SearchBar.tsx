@@ -38,6 +38,7 @@ export default function SearchBar({ markdownPages }: Props) {
           placeholder="Search"
           onChange={(event) => handleSearch(event.target.value)}
           value={query}
+          autoFocus
         />
       </div>
 
