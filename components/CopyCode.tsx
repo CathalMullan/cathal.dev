@@ -46,9 +46,9 @@ export const CopyCode = ({ children }: Props) => {
     >
       <button className="absolute right-1 m-2 h-6 w-6" aria-label="Copy code" type="button" onClick={onClick}>
         {copied ? (
-          <ClipboardCopied className="bg-[#111b27] fill-[#111b27]" />
+          <ClipboardCopied className="rounded-sm fill-black dark:fill-white" />
         ) : (
-          <Clipboard className={visible ? "bg-[#111b27] fill-[#111b27]" : "hidden"} />
+          <Clipboard className={visible ? "rounded-sm fill-black dark:fill-white" : "hidden"} />
         )}
       </button>
 

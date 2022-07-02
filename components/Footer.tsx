@@ -5,7 +5,7 @@ import EmailLink from "./links/EmailLink"
 
 export default function Footer() {
   return (
-    <footer className="border-gray-2 border-t bg-white pt-5 pb-5 text-sm dark:border-gray-600 dark:bg-[#111b27]">
+    <footer className="border-gray-2 border-t pt-5 pb-5 text-sm dark:border-gray-600 dark:bg-code_dark">
       <div className="flex justify-center">Copyright © 2022 Cathal Mullan</div>
 
       <div className="flex items-center justify-center space-x-10 py-2">

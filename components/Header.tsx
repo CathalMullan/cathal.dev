@@ -5,7 +5,7 @@ import SearchLink from "./links/SearchLink"
 
 export default function Header() {
   return (
-    <header className="w-full border-b border-gray-200 bg-white pt-5 pb-5 dark:border-gray-600 dark:bg-[#111b27]">
+    <header className="w-full border-b border-gray-200 pt-5 pb-5 dark:border-gray-600 dark:bg-code_dark">
       <div className="flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center space-x-2 pl-8">

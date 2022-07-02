@@ -7,10 +7,15 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter"
 import { CopyCode } from "./CopyCode"
 
-// Strange error when importing this theme, ignore and move on.
+// Strange error when importing themes, ignore and move on.
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { coldarkCold } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 // Register syntax highlighted languages
 // The default of shipping all languages results in a 2MB bundle, which I'd rather avoid
@@ -20,6 +25,7 @@ import ignore from "react-syntax-highlighter/dist/cjs/languages/prism/ignore"
 import rust from "react-syntax-highlighter/dist/cjs/languages/prism/rust"
 import python from "react-syntax-highlighter/dist/cjs/languages/prism/python"
 import nix from "react-syntax-highlighter/dist/cjs/languages/prism/nix"
+import { useTheme } from "next-themes"
 
 SyntaxHighlighter.registerLanguage("bash", bash)
 SyntaxHighlighter.registerLanguage("yaml", yaml)
@@ -33,6 +39,8 @@ interface Props {
 }
 
 export default function RenderedMarkdown({ content }: Props) {
+  const { theme } = useTheme()
+
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -42,22 +50,29 @@ export default function RenderedMarkdown({ content }: Props) {
           rehypeToc,
           {
             headings: ["h2", "h3", "h4", "h5", "h6"],
-            cssClasses: { list: "list-disc", listItem: "last:pb-2" },
+            cssClasses: { list: "list-disc empty:pb-0 first:pb-8" },
           },
         ],
         [rehypeAutolinkHeadings, { behavior: "prepend" }],
       ]}
       // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
       components={{
-        code({ className, children }) {
-          const match = /language-(\w+)/.exec(className || "")
+        code({ inline, className, children }) {
+          if (inline) {
+            return <code>{children}</code>
+          }
 
           // Fallback to using 'bash' highlighting, so we still maintain a consistant style (over using 'code' as suggested)
+          const match = /language-(\w+)/.exec(className || "")
           const language = match ? match[1] : "bash"
 
           return (
             <CopyCode>
-              <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers={true}>
+              <SyntaxHighlighter
+                style={theme === "dark" ? coldarkDark : coldarkCold}
+                language={language}
+                showLineNumbers={true}
+              >
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
             </CopyCode>
