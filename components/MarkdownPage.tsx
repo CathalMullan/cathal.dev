@@ -1,22 +1,21 @@
-import React from "react"
-import RenderedMarkdown from "./RenderedMarkdown"
-import TwitterShare from "./share/TwitterShare"
-import RedditShare from "./share/RedditShare"
-import HackerNewsShare from "./share/HackerNewsShare"
-import SEO from "./SEO"
-import MarkdownTags from "./MarkdownTags"
-import MarkdownDate from "./MarkdownDate"
+import { MarkdownDate } from "./MarkdownDate";
+import { MarkdownTags } from "./MarkdownTags";
+import { RenderedMarkdown } from "./RenderedMarkdown";
+import { SEO } from "./SEO";
+import { HackerNewsShare } from "./share/HackerNewsShare";
+import { RedditShare } from "./share/RedditShare";
+import { TwitterShare } from "./share/TwitterShare";
 
 interface Props {
-  url: string
-  title: string
-  description: string
-  content: string
-  date: string
-  tags: string[]
+  url: string;
+  title: string;
+  description: string;
+  content: string;
+  date: string;
+  tags: string[];
 }
 
-export default function MarkdownPage({ url, title, description, content, date, tags }: Props) {
+export function MarkdownPage({ url, title, description, content, date, tags }: Props) {
   return (
     <>
       <SEO url={url} title={title} description={description} tags={tags} />
@@ -38,5 +37,5 @@ export default function MarkdownPage({ url, title, description, content, date, t
         </div>
       </section>
     </>
-  )
+  );
 }

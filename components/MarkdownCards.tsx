@@ -1,16 +1,16 @@
-import { MarkdownFile } from "lib/markdown"
-import React from "react"
-import MarkdownDate from "./MarkdownDate"
-import MarkdownTags from "./MarkdownTags"
+import { MarkdownFile } from "lib/markdown";
+
+import { MarkdownDate } from "./MarkdownDate";
+import { MarkdownTags } from "./MarkdownTags";
 
 interface Props {
-  text: string
-  markdownFiles: MarkdownFile[]
+  text: string;
+  markdownFiles: MarkdownFile[];
 }
 
-export default function MarkdownCards({ text, markdownFiles }: Props) {
+export function MarkdownCards({ text, markdownFiles }: Props) {
   return (
-    <>
+    <div>
       {markdownFiles.length > 0 && (
         <section>
           <h2>{text}:</h2>
@@ -32,6 +32,6 @@ export default function MarkdownCards({ text, markdownFiles }: Props) {
           </div>
         </section>
       )}
-    </>
-  )
+    </div>
+  );
 }

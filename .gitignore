@@ -15,6 +15,7 @@ build
 .next
 .vercel
 .pnpm-debug.log
+tsconfig.tsbuildinfo
 
 # Terraform
 .terraform

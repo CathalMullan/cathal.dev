@@ -1,9 +1,9 @@
-import GitHubIcon from "public/svg/GitHubIcon.svg"
+import GitHubIcon from "public/svg/GitHubIcon.svg";
 
-export default function GitHubLink() {
+export function GitHubLink() {
   return (
     <a href="https://github.com/CathalMullan" className="fill-black dark:fill-white" aria-label="GitHub">
       <GitHubIcon className="h-5 w-5" />
     </a>
-  )
+  );
 }

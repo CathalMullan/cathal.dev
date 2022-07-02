@@ -1,14 +1,13 @@
-import React from "react"
-import HackerNewsIcon from "public/svg/HackerNewsIcon.svg"
+import HackerNewsIcon from "public/svg/HackerNewsIcon.svg";
 
 interface Props {
-  url: string
-  title: string
+  url: string;
+  title: string;
 }
 
-export default function HackerNewsShare({ url, title }: Props) {
-  const encodedTitle = encodeURIComponent(title)
-  const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`)
+export function HackerNewsShare({ url, title }: Props) {
+  const encodedTitle = encodeURIComponent(title);
+  const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`);
 
   return (
     <a
@@ -20,5 +19,5 @@ export default function HackerNewsShare({ url, title }: Props) {
     >
       <HackerNewsIcon className="h-8 w-8" />
     </a>
-  )
+  );
 }

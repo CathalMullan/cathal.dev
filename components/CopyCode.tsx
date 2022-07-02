@@ -1,41 +1,41 @@
-import React, { ReactNode, useRef, useState } from "react"
-import Clipboard from "public/svg/Clipboard.svg"
-import ClipboardCopied from "public/svg/ClipboardCopied.svg"
+import Clipboard from "public/svg/Clipboard.svg";
+import ClipboardCopied from "public/svg/ClipboardCopied.svg";
+import { ReactNode, useRef, useState } from "react";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
-export const CopyCode = ({ children }: Props) => {
-  const codeDiv = useRef<HTMLDivElement>(null)
+export function CopyCode({ children }: Props) {
+  const codeDiv = useRef<HTMLDivElement>(null);
 
-  const [copied, setCopied] = useState(false)
-  const [visible, setVisible] = useState(false)
+  const [copied, setCopied] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   const onClick = () => {
     if (!codeDiv.current) {
-      return
+      return;
     }
 
-    setCopied(true)
+    setCopied(true);
 
     // This is awful, but hey, it works.
-    const textContent = codeDiv.current.children[1].children[0].textContent
+    const { textContent } = codeDiv.current.children[1].children[0];
     if (!textContent) {
-      return
+      return;
     }
 
     const codeText = textContent
       .split("\n")
       .map((element, index) => element.substring((index + 1).toString().length))
-      .join("\n")
+      .join("\n");
 
-    navigator.clipboard.writeText(codeText)
+    navigator.clipboard.writeText(codeText);
 
     setTimeout(() => {
-      setCopied(false)
-    }, 2000)
-  }
+      setCopied(false);
+    }, 2000);
+  };
 
   return (
     <div
@@ -54,5 +54,5 @@ export const CopyCode = ({ children }: Props) => {
 
       {children}
     </div>
-  )
+  );
 }

@@ -1,14 +1,13 @@
-import React from "react"
-import RedditIcon from "public/svg/RedditIcon.svg"
+import RedditIcon from "public/svg/RedditIcon.svg";
 
 interface Props {
-  url: string
-  title: string
+  url: string;
+  title: string;
 }
 
-export default function RedditShare({ url, title }: Props) {
-  const encodedTitle = encodeURIComponent(title)
-  const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`)
+export function RedditShare({ url, title }: Props) {
+  const encodedTitle = encodeURIComponent(title);
+  const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`);
 
   return (
     <a
@@ -20,5 +19,5 @@ export default function RedditShare({ url, title }: Props) {
     >
       <RedditIcon className="h-6 w-6" />
     </a>
-  )
+  );
 }

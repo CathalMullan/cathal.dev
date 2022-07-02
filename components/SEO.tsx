@@ -1,19 +1,19 @@
-import Head from "next/head"
+import Head from "next/head";
 
 interface Props {
-  url: string
-  title: string
-  description: string
-  tags: string[]
+  url: string;
+  title: string;
+  description: string;
+  tags: string[];
 }
 
-export default function SEO({ url, title, description, tags }: Props) {
+export function SEO({ url, title, description, tags }: Props) {
   return (
     <Head>
       <meta name="description" content={description} />
       <meta name="keywords" content={tags.join(", ")} />
 
-      <meta property="og:site_name" content={"cathal.dev"} />
+      <meta property="og:site_name" content="cathal.dev" />
       <meta property="og:url" content={`https://cathal.dev/${url}`} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -27,5 +27,5 @@ export default function SEO({ url, title, description, tags }: Props) {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://cathal.dev/android-chrome-512x512.png" />
     </Head>
-  )
+  );
 }

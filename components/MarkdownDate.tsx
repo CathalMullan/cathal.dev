@@ -1,9 +1,7 @@
-import React from "react"
-
 interface Props {
-  date: string
+  date: string;
 }
 
-export default function MarkdownDate({ date }: Props) {
-  return <div className="text-sm">{date}</div>
+export function MarkdownDate({ date }: Props) {
+  return <div className="text-sm">{date}</div>;
 }

@@ -1,15 +1,16 @@
-import Head from "next/head"
-import React, { ReactNode } from "react"
-import Footer from "./Footer"
-import Header from "./Header"
-import RenderedText from "./RenderedText"
+import Head from "next/head";
+import { ReactNode } from "react";
+
+import { Footer } from "./Footer";
+import { Header } from "./Header";
+import { RenderedText } from "./RenderedText";
 
 interface Props {
-  title: string
-  children: ReactNode
+  title: string;
+  children: ReactNode;
 }
 
-export default function PageLayout({ title, children }: Props) {
+export function PageLayout({ title, children }: Props) {
   return (
     <>
       <Head>
@@ -26,5 +27,5 @@ export default function PageLayout({ title, children }: Props) {
         <Footer />
       </main>
     </>
-  )
+  );
 }

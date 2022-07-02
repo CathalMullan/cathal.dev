@@ -1,16 +1,15 @@
-import React from "react"
-import TwitterIcon from "public/svg/TwitterIcon.svg"
+import TwitterIcon from "public/svg/TwitterIcon.svg";
 
 interface Props {
-  url: string
-  title: string
-  tags: string[]
+  url: string;
+  title: string;
+  tags: string[];
 }
 
-export default function TwitterShare({ url, title, tags }: Props) {
-  const encodedTitle = encodeURIComponent(title)
-  const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`)
-  const encodedHashtags = encodeURIComponent(tags.join(","))
+export function TwitterShare({ url, title, tags }: Props) {
+  const encodedTitle = encodeURIComponent(title);
+  const encodedUrl = encodeURIComponent(`https://www.cathal.dev/${url}`);
+  const encodedHashtags = encodeURIComponent(tags.join(","));
 
   return (
     <a
@@ -22,5 +21,5 @@ export default function TwitterShare({ url, title, tags }: Props) {
     >
       <TwitterIcon className="h-6 w-6" />
     </a>
-  )
+  );
 }

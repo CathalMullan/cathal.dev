@@ -2,6 +2,6 @@
 const nextSitemapConfig = {
   siteUrl: "https://cathal.dev",
   generateIndexSitemap: false,
-}
+};
 
-module.exports = nextSitemapConfig
+module.exports = nextSitemapConfig;

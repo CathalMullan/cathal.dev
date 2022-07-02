@@ -8,15 +8,16 @@
     "sync": "./scripts/sync.sh",
     "purge": "./scripts/purge.sh",
     "start": "next start",
-    "lint": "next lint",
-    "fmt": "pnpm prettier --write .",
-    "fmt-ci": "pnpm prettier ."
+    "lint": "eslint --fix . && prettier --write . && tsc",
+    "lint:ci": "eslint . && prettier --check . && tsc"
   },
   "dependencies": {
     "@jsdevtools/rehype-toc": "3.0.2",
     "@next/env": "12.2.0",
+    "@tailwindcss/typography": "0.5.2",
     "fuse.js": "6.6.2",
     "glob": "8.0.3",
+    "gray-matter": "4.0.3",
     "next": "12.2.0",
     "next-sitemap": "3.1.7",
     "next-themes": "0.2.0",
@@ -29,7 +30,6 @@
   },
   "devDependencies": {
     "@svgr/webpack": "6.2.1",
-    "@tailwindcss/typography": "0.5.2",
     "@types/glob": "7.2.0",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
@@ -39,9 +39,17 @@
     "@typescript-eslint/parser": "5.30.3",
     "autoprefixer": "10.4.7",
     "eslint": "8.19.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-next": "12.2.0",
     "eslint-config-prettier": "8.5.0",
-    "gray-matter": "4.0.3",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.0",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-etc": "2.0.0",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
     "postcss": "8.4.14",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "0.1.11",
@@ -49,9 +57,7 @@
     "typescript": "4.7.4"
   },
   "prettier": {
-    "singleQuote": false,
-    "semi": false,
-    "trailingComma": "es5",
+    "trailingComma": "all",
     "plugins": [
       "prettier-plugin-tailwindcss"
     ]
@@ -59,17 +65,54 @@
   "eslintConfig": {
     "root": true,
     "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
     "plugins": [
-      "@typescript-eslint"
+      "@typescript-eslint",
+      "simple-import-sort"
     ],
     "extends": [
-      "next/core-web-vitals",
+      "next",
+      "airbnb",
+      "airbnb-typescript",
       "plugin:@typescript-eslint/recommended",
-      "prettier"
+      "plugin:@typescript-eslint/strict",
+      "plugin:eslint-comments/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:react-etc/recommended",
+      "prettier",
+      "prettier/prettier"
     ],
+    "settings": {
+      "linkComponents": [
+        "Link"
+      ]
+    },
     "rules": {
       "@typescript-eslint/no-unused-vars": "error",
-      "@typescript-eslint/no-explicit-any": "error"
-    }
+      "@typescript-eslint/no-explicit-any": "error",
+      "import/prefer-default-export": "off",
+      "react/jsx-props-no-spreading": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.js"
+        ],
+        "rules": {
+          "@typescript-eslint/no-var-requires": "off"
+        }
+      },
+      {
+        "files": [
+          "./src/pages/**"
+        ],
+        "rules": {
+          "import/no-default-export": "off",
+          "import/prefer-default-export": "error"
+        }
+      }
+    ]
   }
 }
