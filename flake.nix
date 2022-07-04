@@ -33,6 +33,10 @@
             nodejs-18_x
             nodePackages.pnpm
 
+            # Nix
+            nixpkgs-fmt
+            rnix-lsp
+
             # AWS
             awscli2
 
@@ -44,10 +48,6 @@
             git
             jq
             curl
-
-            # Nix
-            nixpkgs-fmt
-            rnix-lsp
           ];
         };
       });
