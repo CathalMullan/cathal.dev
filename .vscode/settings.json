@@ -1,0 +1,29 @@
+{
+  "editor.formatOnSave": true,
+
+  // jnoortheen.nix-ide
+  "nix.enableLanguageServer": true,
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+
+  // esbenp.prettier-vscode
+  "prettier.useEditorConfig": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // dbaeumer.vscode-eslint
+  "eslint.run": "onSave",
+  "eslint.alwaysShowStatus": true,
+  "eslint.packageManager": "pnpm",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // bradlc.vscode-tailwindcss
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

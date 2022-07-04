@@ -44,6 +44,10 @@
             git
             jq
             curl
+
+            # Nix
+            nixpkgs-fmt
+            rnix-lsp
           ];
         };
       });

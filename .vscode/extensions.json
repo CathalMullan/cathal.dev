@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "mkhl.direnv",
+    "jnoortheen.nix-ide",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "jock.svg"
+  ]
+}
