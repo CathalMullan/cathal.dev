@@ -19,7 +19,7 @@ export function MarkdownCards({ text, markdownFiles }: Props) {
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {markdownFiles.map(({ id, url, title, description, tags, date }: MarkdownFile) => (
-                <div key={id} className="rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                <div key={id} className="rounded-lg hover:bg-gray-100">
                   <div className="p-4">
                     <a href={`/${url}`} className="mb-2 text-xl font-bold">
                       {title}

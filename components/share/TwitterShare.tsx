@@ -13,7 +13,7 @@ export function TwitterShare({ url, title, tags }: Props) {
 
   return (
     <a
-      className="fill-black dark:fill-white"
+      className="fill-black"
       href={`https://twitter.com/share?text=${encodedTitle}&url=${encodedUrl}&hashtags=${encodedHashtags}`}
       target="_blank"
       rel="noreferrer"

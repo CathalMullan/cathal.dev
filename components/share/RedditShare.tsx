@@ -11,7 +11,7 @@ export function RedditShare({ url, title }: Props) {
 
   return (
     <a
-      className="fill-black dark:fill-white"
+      className="fill-black"
       href={`https://reddit.com/submit?url=${encodedUrl}&title=${encodedTitle}`}
       target="_blank"
       rel="noreferrer"

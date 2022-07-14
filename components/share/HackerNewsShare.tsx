@@ -11,7 +11,7 @@ export function HackerNewsShare({ url, title }: Props) {
 
   return (
     <a
-      className="fill-black dark:fill-white"
+      className="fill-black"
       href={`https://news.ycombinator.com/submitlink?u=${encodedUrl}&t=${encodedTitle}`}
       target="_blank"
       rel="noreferrer"

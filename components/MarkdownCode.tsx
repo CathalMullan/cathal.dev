@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // Register syntax highlighted languages
@@ -12,7 +11,7 @@ import yaml from "react-syntax-highlighter/dist/cjs/languages/prism/yaml";
 // Strange error when importing themes, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import { coldarkCold, coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { coldarkCold } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { CopyCode } from "./CopyCode";
 
@@ -33,7 +32,6 @@ interface Props {
 
 // https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight
 export function MarkdownCode({ inline, className, children }: Props) {
-  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -54,7 +52,7 @@ export function MarkdownCode({ inline, className, children }: Props) {
 
   return (
     <CopyCode>
-      <SyntaxHighlighter style={theme === "light" ? coldarkCold : coldarkDark} language={language} showLineNumbers>
+      <SyntaxHighlighter style={coldarkCold} language={language} showLineNumbers>
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     </CopyCode>

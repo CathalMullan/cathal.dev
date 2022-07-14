@@ -11,7 +11,7 @@ interface Props {
 
 export default function Index({ aboutMe, blogPosts, snippets }: Props) {
   return (
-    <PageLayout title="Cathal Mullan's Personal Site">
+    <PageLayout title="Cathal Mullan | Software Engineer">
       <RenderedMarkdown content={aboutMe.content} />
 
       <MarkdownCards text="Latest Blog Posts" markdownFiles={blogPosts} />

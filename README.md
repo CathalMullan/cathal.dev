@@ -19,12 +19,16 @@ My website.
 
 Ordered by priority.
 
+- Re-add dark mode
+- Breadcrumb (see https://zimbatm.com/notes/nix-packaging-the-heretic-way)
+- Re-consider font/styling (use DaisyUI)
 - Add actual content, remove test blogs and 'work in progress' warning.
 - Pagination
 - Archive view (content per month?)
 
 Potential Blog Topics:
 
+- Using R2 as a Nix store
 - 'git-blame-ignore-revs'
 - AWS GitHub OIDC integration
 - IAMLive

@@ -2,11 +2,10 @@ import Link from "next/link";
 import LightningBolt from "public/svg/LightningBolt.svg";
 
 import { SearchLink } from "./links/SearchLink";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
-    <header className="w-full border-b border-gray-200 pt-5 pb-5 dark:border-gray-600 dark:bg-code_dark">
+    <header className="w-full border-b border-gray-200 pt-5 pb-5">
       <div className="flex items-center justify-between">
         <Link href="/">
           <button type="submit" aria-label="Home" className="flex items-center space-x-2 pl-8">
@@ -17,7 +16,6 @@ export function Header() {
 
         <div className="flex items-center space-x-8 pr-8">
           <SearchLink />
-          <ThemeToggle />
         </div>
       </div>
     </header>
