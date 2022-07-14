@@ -10,6 +10,8 @@ export default function Document() {
         <meta name="description" content="Cathal Mullan | Software Engineer" />
         <meta name="keywords" content="rust, python, aws, postgres, terraform, nix" />
 
+        <link rel="preload" href="/fonts/JetBrainsMonoNL.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -17,7 +19,7 @@ export default function Document() {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
 
-      <body className="font-sans font-medium antialiased">
+      <body className="font-mono tracking-tighter antialiased">
         <Main />
         <NextScript />
       </body>

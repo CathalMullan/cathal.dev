@@ -39,7 +39,7 @@ export function CopyCode({ children }: Props) {
 
   return (
     <div
-      className="relative"
+      className="relative tracking-normal"
       ref={codeDiv}
       onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
