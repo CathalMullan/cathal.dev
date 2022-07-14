@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@jsdevtools/rehype-toc': 3.0.2
   '@next/env': 12.2.2
   '@svgr/webpack': 6.2.1
   '@tailwindcss/typography': 0.5.4
@@ -43,7 +42,6 @@ specifiers:
   typescript: 4.7.4
 
 dependencies:
-  '@jsdevtools/rehype-toc': 3.0.2
   '@next/env': 12.2.2
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
   fuse.js: 6.6.2
@@ -1429,11 +1427,6 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
-
-  /@jsdevtools/rehype-toc/3.0.2:
-    resolution: {integrity: sha512-n5JEf16Wr4mdkRMZ8wMP/wN9/sHmTjRPbouXjJH371mZ2LEGDl72t8tEsMRNFerQN/QJtivOxqK1frdGa4QK5Q==}
-    engines: {node: '>=10'}
-    dev: false
 
   /@next/env/12.2.2:
     resolution: {integrity: sha512-BqDwE4gDl1F608TpnNxZqrCn6g48MBjvmWFEmeX5wEXDXh3IkAOw6ASKUgjT8H4OUePYFqghDFUss5ZhnbOUjw==}
