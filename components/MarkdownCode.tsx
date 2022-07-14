@@ -11,7 +11,7 @@ import yaml from "react-syntax-highlighter/dist/cjs/languages/prism/yaml";
 // Strange error when importing themes, ignore and move on.
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import { coldarkCold } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { CopyCode } from "./CopyCode";
 
@@ -52,7 +52,7 @@ export function MarkdownCode({ inline, className, children }: Props) {
 
   return (
     <CopyCode>
-      <SyntaxHighlighter style={coldarkCold} language={language} showLineNumbers>
+      <SyntaxHighlighter style={coldarkDark} language={language} showLineNumbers>
         {String(children).replace(/\n$/, "")}
       </SyntaxHighlighter>
     </CopyCode>

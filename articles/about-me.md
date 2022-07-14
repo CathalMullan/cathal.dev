@@ -9,6 +9,6 @@ tags: []
 
 Hi, I'm Cathal Mullan, a Software Engineer.
 
-My interests include Rust, Python and Nix.
+My interests include Rust, Python, AWS, Postgres, Terraform and Nix.
 
 This site will likely cover these topics in time, but for now it's a work in progress.

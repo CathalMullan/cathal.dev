@@ -47,10 +47,6 @@ export function fetchMarkdownFiles(directory: string): MarkdownFile[] {
   return markdownFileNames.map((filePath) => gatherMarkdownMetadata(filePath));
 }
 
-export function fetchMarkdownFilesByTags(tags: string[]): MarkdownFile[] {
-  return fetchMarkdownFiles(".").filter((file) => file.tags.some((file_tag) => tags.includes(file_tag)));
-}
-
 export function fetchMarkdownFile(file: string): MarkdownFile {
   const filePath = path.join(articlesDirectory, file);
   return gatherMarkdownMetadata(filePath);

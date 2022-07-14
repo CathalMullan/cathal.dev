@@ -35,7 +35,7 @@ export function SearchBar({ markdownPages }: Props) {
 
         <input
           type="search"
-          className="block w-full rounded-lg border border-gray-600 bg-white p-4 pl-10 text-black"
+          className="block w-full rounded-lg border border-gray-200 bg-white p-4 pl-10 text-black"
           placeholder="Search"
           onChange={(event) => handleSearch(event.target.value)}
           value={query}

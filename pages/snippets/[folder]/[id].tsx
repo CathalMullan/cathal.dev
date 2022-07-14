@@ -1,17 +1,16 @@
 import { MarkdownPage } from "components/MarkdownPage";
 import { PageLayout } from "components/PageLayout";
-import { fetchMarkdownFile, fetchMarkdownFiles, fetchMarkdownFilesByTags, MarkdownFile } from "lib/markdown";
+import { fetchMarkdownFile, fetchMarkdownFiles, MarkdownFile } from "lib/markdown";
 import { GetStaticPaths, GetStaticPropsContext } from "next";
 
 interface Props {
   snippet: MarkdownFile;
-  relatedPosts: MarkdownFile[];
 }
 
-export default function SnippetPage({ snippet, relatedPosts }: Props) {
+export default function SnippetPage({ snippet }: Props) {
   return (
     <PageLayout title={snippet.title}>
-      <MarkdownPage {...snippet} relatedPosts={relatedPosts} />
+      <MarkdownPage {...snippet} />
     </PageLayout>
   );
 }
@@ -20,13 +19,11 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const id = params ? `${params.id}` : "";
   const folder = params ? `${params.folder}` : "";
 
-  const snippet = fetchMarkdownFile(`snippets/${folder}/${id}.md`);
-  const relatedPosts = fetchMarkdownFilesByTags(snippet.tags)
-    .filter((file) => file.id !== snippet.id)
-    .sort((a, b) => a.date.localeCompare(b.date))
-    .slice(0, 2);
-
-  return { props: { snippet, relatedPosts } };
+  return {
+    props: {
+      snippet: fetchMarkdownFile(`snippets/${folder}/${id}.md`),
+    },
+  };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

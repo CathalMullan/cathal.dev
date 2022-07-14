@@ -46,9 +46,9 @@ export function CopyCode({ children }: Props) {
     >
       <button className="absolute right-1 m-2 h-6 w-6" aria-label="Copy code" type="button" onClick={onClick}>
         {copied ? (
-          <ClipboardCopied className="rounded-sm fill-black" />
+          <ClipboardCopied className="rounded-sm fill-white" />
         ) : (
-          <Clipboard className={visible ? "rounded-sm fill-black" : "hidden"} />
+          <Clipboard className={visible ? "rounded-sm fill-white" : "hidden"} />
         )}
       </button>
 

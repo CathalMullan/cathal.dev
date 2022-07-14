@@ -3,5 +3,5 @@ interface Props {
 }
 
 export function MarkdownDate({ date }: Props) {
-  return <div className="text-sm">{date}</div>;
+  return <div className="text-sm font-bold text-gray-500">{date}</div>;
 }
