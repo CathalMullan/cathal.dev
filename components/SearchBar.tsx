@@ -15,8 +15,9 @@ export function SearchBar({ markdownPages }: Props) {
   const [results, setResults] = useState<MarkdownFile[]>([]);
 
   const searchIndex = new Fuse(markdownPages, {
-    threshold: 0.3,
-    keys: ["title", "content", "tags"],
+    threshold: 0.2,
+    minMatchCharLength: 2,
+    keys: ["title", "content", "tags", "date"],
     ignoreLocation: true,
   });
 
@@ -44,7 +45,9 @@ export function SearchBar({ markdownPages }: Props) {
         />
       </div>
 
-      <MarkdownCards text="Results" markdownFiles={results} />
+      <div className="pt-4">
+        <MarkdownCards markdownPages={results} />
+      </div>
     </RenderedText>
   );
 }

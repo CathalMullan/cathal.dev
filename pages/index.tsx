@@ -14,8 +14,19 @@ export default function Index({ aboutMe, blogPosts, snippets }: Props) {
     <PageLayout title="Cathal Mullan | Software Engineer">
       <RenderedMarkdown content={aboutMe.content} />
 
-      <MarkdownCards text="Latest Blog Posts" markdownFiles={blogPosts} />
-      <MarkdownCards text="Latest Snippets" markdownFiles={snippets} />
+      <hr />
+
+      <div>
+        <h2>Latest Blog Posts</h2>
+        <MarkdownCards markdownPages={blogPosts} />
+      </div>
+
+      <hr />
+
+      <div>
+        <h2>Latest Snippets</h2>
+        <MarkdownCards markdownPages={snippets} />
+      </div>
     </PageLayout>
   );
 }

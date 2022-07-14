@@ -5,17 +5,14 @@ import { GetStaticPaths, GetStaticPropsContext } from "next";
 
 interface Props {
   tag: string;
-  blogPosts: MarkdownFile[];
-  snippets: MarkdownFile[];
+  markdownPages: MarkdownFile[];
 }
 
-export default function TagPage({ tag, blogPosts, snippets }: Props) {
+export default function TagPage({ tag, markdownPages }: Props) {
   return (
     <PageLayout title={tag}>
       <h1>{tag} content</h1>
-
-      <MarkdownCards text="Blog Posts" markdownFiles={blogPosts} />
-      <MarkdownCards text="Snippets" markdownFiles={snippets} />
+      <MarkdownCards markdownPages={markdownPages} />
     </PageLayout>
   );
 }
@@ -30,8 +27,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   return {
     props: {
       tag,
-      blogPosts,
-      snippets,
+      markdownPages: blogPosts.concat(snippets),
     },
   };
 };
