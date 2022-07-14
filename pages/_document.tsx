@@ -7,9 +7,6 @@ export default function Document() {
         <meta name="author" content="Cathal Mullan" />
         <meta content="text/html; charset=UTF-8" name="Content-Type" />
 
-        <meta name="description" content="Cathal Mullan | Software Engineer" />
-        <meta name="keywords" content="rust, python, aws, postgres, terraform, nix" />
-
         <link rel="preload" href="/fonts/JetBrainsMonoNL.ttf" as="font" type="font/ttf" crossOrigin="anonymous" />
 
         <link rel="icon" href="/favicon.ico" />

@@ -22,7 +22,7 @@ export function SEO({ url, title, description, tags }: Props) {
       <meta property="og:locale" content="en_US" />
 
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@Cathal_Dev" />
+      <meta name="twitter:site" content="@cathal_dev" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://cathal.dev/android-chrome-512x512.png" />

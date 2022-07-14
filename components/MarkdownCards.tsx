@@ -15,7 +15,7 @@ export function MarkdownCards({ markdownPages }: Props) {
           {markdownPages.map(({ id, url, title, description, tags, date }: MarkdownFile) => (
             <div key={id} className="rounded-lg hover:bg-gray-100">
               <div className="p-4">
-                <a href={`/${url}`} className="mb-2 text-xl font-bold no-underline hover:underline">
+                <a href={`/${url}`} className="mb-2 text-lg font-bold no-underline hover:underline">
                   {title}
                 </a>
 
